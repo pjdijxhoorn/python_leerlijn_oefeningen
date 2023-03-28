@@ -98,6 +98,24 @@ def les1():
 
     # ------------opdracht3----------
     """
+    We gaan een euro dollar converter maken. 
+
+    1. Zoek de koers op en sla deze waarde op in variabele (dollarwaarde , euro waarde).
+    2. Print deze gegevens uit met behulp van een print()
+    3. Maak een gebruikers invoer die vraagt om aantal dollar en print de waarde in euro's en andersom.
+    """
+
+    dollar_euro = 0.94
+    euro_dollar = 1.07
+
+    print("1 dollar = ", dollar_euro, "euro. and 1 euro is ", euro_dollar, " dollar")
+    conversion_dollar_to_euro = float(input("Give the amount of dollar you want to convert to euro: "))
+    conversion_euro_to_dollar = float(input("Give the amount of euro you want to convert to dollar: "))
+    print(conversion_dollar_to_euro, "dollar converterd to euro is: ", conversion_dollar_to_euro * dollar_euro)
+    print(conversion_euro_to_dollar, "euro converterd to dollar is: ", conversion_euro_to_dollar * euro_dollar)
+
+    # ------------opdracht4----------
+    """
     OPDRACHT: 
         We gaan een Rekenkundig spel maken waarbij je twee getallen moet 
         raden op basis van de berekeningen die hierop gedaan zijn.

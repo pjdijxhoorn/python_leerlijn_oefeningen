@@ -247,4 +247,46 @@ def les2():
         if anothergame == "n":
             break
 
+    # ------------opdracht5----------
 
+    """
+    We gaan verder werken aan de dollar-euro converter.
+    Maak het zo dat de gebruiker vaker dan een maal een currency kan converteren.
+    zorg dat de gebruiker kan kiezen tussen dollar-euro of euro-dollar
+    pas een while too om te checken of een invoer van de strings goed is 
+    en blijf in de loop totdat de juiste invoer is gedaan.
+    zorg ervoor dat je een try except bouwt om de float input van amount.
+    
+    BONUS voeg meer valuta's toe bijvoorbeeld: pond, yen, bitcoin
+    
+    """
+
+    dollar_euro = 0.94
+    euro_dollar = 1.07
+
+    while True:
+        print("1 dollar = ", dollar_euro, "euro. and 1 euro is ", euro_dollar, " dollar")
+
+        userchoice = input("for dollerconversion type dollar, for euro conversion type euro")
+
+        if userchoice == "dollar":
+            while True:
+                try:
+                    conversion_dollar_to_euro = float(input("Give the amount of dollar you want to convert to euro: "))
+                    print(conversion_dollar_to_euro, "dollar converterd to euro is: ", conversion_dollar_to_euro * dollar_euro)
+                except:
+                    print("That is not a valid amount")
+        elif userchoice == "euro":
+            while True:
+                try:
+                    conversion_euro_to_dollar = float(input("Give the amount of euro you want to convert to dollar: "))
+                    print(conversion_euro_to_dollar, "euro converterd to dollar is: ", conversion_euro_to_dollar * euro_dollar)
+                except:
+                    print("That is not a valid amount")
+        else:
+            print("that was not a valid choice! please type dollar or euro")
+
+        userchoice = input("want to do another conversion? y = yes, n = no")
+        if userchoice == "n":
+            print("thank you for using our service, goodbye!")
+            break

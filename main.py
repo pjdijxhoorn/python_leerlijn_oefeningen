@@ -5,13 +5,6 @@ from les4 import les4
 
 from test import test
 
-number = int(input("geef een nummer om te checken voor positief negatief"))
-
-# check if number is greater than 0
-if number > 0:
-    print('Number is groter dan 0.')
-else:
-    print('Number is kleiner dan 0.')
 
 
 
