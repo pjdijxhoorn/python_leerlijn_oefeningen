@@ -260,78 +260,78 @@ def test():
 
     play_the_game()
 
-        # ------------- oefening 2-------------
-        # je hebt gemerkt dat niet alle verzetstrijder even goed zijn in basis rekenen en dat is best wel onhadig als je met bijvoorbeeld explosieven werkt.
-        # hierom besluit je om een kleine rekenoefening programma te schrijven die rekensommen maakt en om een input vraagt en de input checkt met het correcte antwoord.
-        # tja het leven van een verzetsheld is niet altijd actie en glamour.
-        # bouw een applicatie die twee random nummers uit print.
-        # en hier een som van maakt
-        # vervolgens moet deze om een invoer vragen en checken of de invoer klopt met de gegeven som.
-        # Bonus : maak de functie zo dat er een random operator wordt gebrukt van de soort + - * of /. en hier dus een som van maakt.
-        # Bonus bouw in dat je van te voren kan opgeven hoeveel vragen je wilt beantwoorden.
-        # Bonus: bouw een punten systeem erbij voor goede antwoorden en foute antwoorden.
-        # Bonus: bij het aftrekken kom je soms negatief uit. als dit het geval is draai dan de nummers om.
-        # Bonus: bij het delen kom je soms op decimalen uit. maak de functie zo dat dit niet meer het geval is.
-        # Tip modulo uitkomst van het grooste getal zetten en deze voorin in de berekening zetten
-        # Bonus: schrijf de functie zo dat je zelf kan ingeven hoe hoog de getalen mogen zijn
+    # ------------- oefening 2-------------
+    # je hebt gemerkt dat niet alle verzetstrijder even goed zijn in basis rekenen en dat is best wel onhadig als je met bijvoorbeeld explosieven werkt.
+    # hierom besluit je om een kleine rekenoefening programma te schrijven die rekensommen maakt en om een input vraagt en de input checkt met het correcte antwoord.
+    # tja het leven van een verzetsheld is niet altijd actie en glamour.
+    # bouw een applicatie die twee random nummers uit print.
+    # en hier een som van maakt
+    # vervolgens moet deze om een invoer vragen en checken of de invoer klopt met de gegeven som.
+    # Bonus : maak de functie zo dat er een random operator wordt gebrukt van de soort + - * of /. en hier dus een som van maakt.
+    # Bonus bouw in dat je van te voren kan opgeven hoeveel vragen je wilt beantwoorden.
+    # Bonus: bouw een punten systeem erbij voor goede antwoorden en foute antwoorden.
+    # Bonus: bij het aftrekken kom je soms negatief uit. als dit het geval is draai dan de nummers om.
+    # Bonus: bij het delen kom je soms op decimalen uit. maak de functie zo dat dit niet meer het geval is.
+    # Tip modulo uitkomst van het grooste getal zetten en deze voorin in de berekening zetten
+    # Bonus: schrijf de functie zo dat je zelf kan ingeven hoe hoog de getalen mogen zijn
 
-        print("-----rekenmachine-----")
+    print("-----rekenmachine-----")
 
-        def randomNummerGenerator(startnummer, eindnummer):
-            getal = random.randint(startnummer, eindnummer)
-            return getal
+    def randomNummerGenerator(startnummer, eindnummer):
+        getal = random.randint(startnummer, eindnummer)
+        return getal
 
-        def rekenSomGenerator(aantalvragen, maxgetal):
-            aantalvragen = aantalvragen
-            goedeantwoorden = 0
-            fouteantwoorden = 0
-            while aantalvragen != 0:
+    def rekenSomGenerator(aantalvragen, maxgetal):
+        aantalvragen = aantalvragen
+        goedeantwoorden = 0
+        fouteantwoorden = 0
+        while aantalvragen != 0:
 
-                randomnumber = randomNummerGenerator(1, maxgetal)
-                randomnumber2 = randomNummerGenerator(1, maxgetal)
-                randomoperatornummer = randomNummerGenerator(1, 4)
-                antwoord = 0
+            randomnumber = randomNummerGenerator(1, maxgetal)
+            randomnumber2 = randomNummerGenerator(1, maxgetal)
+            randomoperatornummer = randomNummerGenerator(1, 4)
+            antwoord = 0
 
-                if randomoperatornummer == 1:
-                    if randomnumber > randomnumber2:
-                        antwoord = randomnumber - randomnumber2
-                        print(randomnumber, "-", randomnumber2, "=")
-                    else:
-                        antwoord = randomnumber2 - randomnumber
-                        print(randomnumber2, "-", randomnumber, "=")
-                elif randomoperatornummer == 2:
-                    antwoord = randomnumber + randomnumber2
-                    print(randomnumber, "+", randomnumber2, "=")
-                elif randomoperatornummer == 3:
-                    antwoord = randomnumber * randomnumber2
-                    print(randomnumber, "*", randomnumber2, "=")
-                elif randomoperatornummer == 4:
-                    if randomnumber > randomnumber2:
-                        over = randomnumber % randomnumber2
-                        randomnumber = randomnumber - over
-                        antwoord = randomnumber / randomnumber2
-                        print(randomnumber, "/", randomnumber2, "=")
-                    else:
-                        over = randomnumber2 % randomnumber
-                        randomnumber2 = randomnumber2 - over
-                        antwoord = randomnumber2 / randomnumber
-                        print(randomnumber2, "/", randomnumber, "=")
-
-                keuze = int(input("voer hier je antwoord in: "))
-                print(keuze)
-
-                if keuze == antwoord:
-                    print(keuze, "is het goede antwoord")
-                    goedeantwoorden = goedeantwoorden + 1
+            if randomoperatornummer == 1:
+                if randomnumber > randomnumber2:
+                    antwoord = randomnumber - randomnumber2
+                    print(randomnumber, "-", randomnumber2, "=")
                 else:
-                    print(keuze, "was fout het goede antwoord was ", antwoord)
-                    fouteantwoorden = fouteantwoorden + 1
-                print("je hebt ", goedeantwoorden, "goed beantwoord", "en je hebt ", fouteantwoorden,
-                      "foutief beantwoord")
-                aantalvragen = aantalvragen - 1
+                    antwoord = randomnumber2 - randomnumber
+                    print(randomnumber2, "-", randomnumber, "=")
+            elif randomoperatornummer == 2:
+                antwoord = randomnumber + randomnumber2
+                print(randomnumber, "+", randomnumber2, "=")
+            elif randomoperatornummer == 3:
+                antwoord = randomnumber * randomnumber2
+                print(randomnumber, "*", randomnumber2, "=")
+            elif randomoperatornummer == 4:
+                if randomnumber > randomnumber2:
+                    over = randomnumber % randomnumber2
+                    randomnumber = randomnumber - over
+                    antwoord = randomnumber / randomnumber2
+                    print(randomnumber, "/", randomnumber2, "=")
+                else:
+                    over = randomnumber2 % randomnumber
+                    randomnumber2 = randomnumber2 - over
+                    antwoord = randomnumber2 / randomnumber
+                    print(randomnumber2, "/", randomnumber, "=")
 
-        maxgetal = int(input("Voer hier het max getal in: "))
-        aantalvragen = int(input("Voer hier het aantal vragen in : "))
-        rekenSomGenerator(aantalvragen, maxgetal)
+            keuze = int(input("voer hier je antwoord in: "))
+            print(keuze)
 
-        # ------------- oefening 5-------------
+            if keuze == antwoord:
+                print(keuze, "is het goede antwoord")
+                goedeantwoorden = goedeantwoorden + 1
+            else:
+                print(keuze, "was fout het goede antwoord was ", antwoord)
+                fouteantwoorden = fouteantwoorden + 1
+            print("je hebt ", goedeantwoorden, "goed beantwoord", "en je hebt ", fouteantwoorden,
+                  "foutief beantwoord")
+            aantalvragen = aantalvragen - 1
+
+    maxgetal = int(input("Voer hier het max getal in: "))
+    aantalvragen = int(input("Voer hier het aantal vragen in : "))
+    rekenSomGenerator(aantalvragen, maxgetal)
+
+    # ------------- oefening 5-------------

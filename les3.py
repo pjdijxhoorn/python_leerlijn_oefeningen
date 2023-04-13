@@ -19,9 +19,8 @@ def les3():
         getal = random.randint(minimal, maximal)
         return getal
 
-    print(random_number_generator(1, 10))
-    print(random_number_generator(1, 10))
-    print(random_number_generator(1, 10))
+    for x in range(1,10):
+        print(random_number_generator(1, 10))
 
     # ------------opdracht2----------
 
