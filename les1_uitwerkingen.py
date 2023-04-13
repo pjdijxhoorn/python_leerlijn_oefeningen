@@ -13,6 +13,9 @@ Maak een variable welkomsgroet (bijvoorbeeld welkom)
 Print de welkomsgroet en naam uit. 
 """
 
+naam = input("geef hier je naam in")
+welkomsgroet = "welkom"
+print(welkomsgroet, naam)
 
 # ------------opdracht 2----------
 """  
@@ -24,7 +27,10 @@ In deze opdracht gaan we de waarde voor een variabele overschrijven.
 5. print band opnieuw. 
 """
 
-
+band = "deze band is lek"
+print(band)
+band = "nieuwe band op gezet"
+print(band)
 
 # ------------opdracht 3----------
 """ 
@@ -47,7 +53,15 @@ print(oplossing1)
 
 # Tip! De volgende dieren komen voor in de variabelen: Ezel, Panter, Slang, Otter, Eland
 
-
+# overige oplossingen
+oplossing2 = var2[15:21]
+print(oplossing2)
+oplossing3 = var3[10:16]
+print(oplossing3)
+oplossing4 = var4[6:11]
+print(oplossing4)
+oplossing5 = var5[17:24]
+print(oplossing5)
 
 # //////////operatoren//////////
 # ------------opdracht1 ----------
@@ -66,6 +80,14 @@ Het aantal studie_uren = x
 Het totaal per week = x 
 """
 
+ETCS = 15
+studie_uren = 28
+weken = 12
+
+totaal_studie_uren = ETCS * studie_uren
+tijd_per_week = totaal_studie_uren / weken
+print("het aantal studie_uren = ", totaal_studie_uren)
+print("het totaal per week = ", tijd_per_week)
 
 # ------------opdracht2----------
 
@@ -83,11 +105,18 @@ False
 True 
 """
 
+tim = 30
+bas = 33
+leeftijdsverschil = bas - tim
+
+print(leeftijdsverschil)
+print(bas == tim)
+print(bas > tim)
 
 # ------------opdracht3----------
 """ 
 We gaan een euro dollar converter maken. Hoe? Volg de onderstaande stappen: 
-
+ 
 1. Zoek de koers op en sla deze waarde op in variabele (dollarwaarde naar eurowaarde , euro waarde naar dollarwaarde). 
 2. Print deze gegevens uit met behulp van een print() 
 3. Maak een gebruikers invoer (input) die vraagt om aantal dollar en print de waarde in euro's en andersom. 
@@ -96,6 +125,14 @@ Tip: een input geeft een string terug je wilt een float hebben dus gebruik typec
 om de waarde om te zetten naar een float. 
 """
 
+dollar_euro = 0.94
+euro_dollar = 1.07
+
+print("1 dollar = ", dollar_euro, "euro. and 1 euro is ", euro_dollar, " dollar")
+conversion_dollar_to_euro = float(input("Give the amount of dollar you want to convert to euro: "))
+conversion_euro_to_dollar = float(input("Give the amount of euro you want to convert to dollar: "))
+print(conversion_dollar_to_euro, "dollar converted to euro is: ", conversion_dollar_to_euro * dollar_euro)
+print(conversion_euro_to_dollar, "euro converted to dollar is: ", conversion_euro_to_dollar * euro_dollar)
 
 
 # ------------opdracht4----------
@@ -105,7 +142,7 @@ We gaan een rekenspel maken waarin je twee getallen moet raden op basis van bere
 We gaan twee int variabelen maken, random nummers genereren, verschillende berekeningen uitvoeren en twee variabelen
 maken voor de geschatte getallen. Wanneer deze geschatte getallen overeenkomen met de random nummers, printen we de 
 juiste feedback voor de gebruiker uit. Laten we beginnen met deze opdracht! 
-
+ 
 STAPPENPLAN:  
 
 1. Maak 2 int (integer) variabelen maximum en minimum 
@@ -149,7 +186,30 @@ Wat denk je dat getal2 is4
 
 """
 
+maximum = int(input("geef een max getal"))
+minimaal = int(input("geef een minimaal getal"))
+randomNumber1 = random.randint(minimaal, maximum)
+randomNumber2 = random.randint(minimaal, maximum)
 
+gelijk = randomNumber1 == randomNumber2
+print("getal1 en getal2 zijn gelijk", gelijk)
+groter = randomNumber1 > randomNumber2
+print("getal1 is groter dan getal2", groter)
+vermenigvuldig = randomNumber1 * randomNumber2
+print("getal1 X getal2 = ", vermenigvuldig)
+plus = randomNumber1 + randomNumber2
+print("getal1 + getal2 = ", plus)
+aftrekken = randomNumber1 - randomNumber2
+print("getal1 - getal2 = ", aftrekken)
+delen = randomNumber1 / randomNumber2
+print("getal1 / getal2 = ", delen)
+
+gokgetal1 = int(input("wat denk je dat getal1 is"))
+gok1 = gokgetal1 == randomNumber1
+print(gokgetal1, "is", gok1)
+gokgetal2 = int(input("wat denk je dat getal2 is"))
+gok2 = gokgetal2 == randomNumber2
+print(gokgetal2, "is", gok2)
 
 # //////////If-elif-else statements//////////
 # ------------opdracht1----------
@@ -165,11 +225,19 @@ In deze opdracht maak je een if-else statement om te checken of een gegeven geta
 
 geef een nummer om te checken of het groter of kleiner is dan 0 : 3 
 Number is groter dan 0 
-
+ 
 
 """
 
+number = int(input("geef een nummer om te checken of groter of kleiner is dan 0 :"))
 
+# check if number is greater than 0
+if number > 0:
+    print('Number is groter dan 0.')
+elif number == 0:
+    print("number is 0")
+else:
+    print('Number is kleiner dan 0.')
 
 # ------------opdracht2----------
 """ 
@@ -189,16 +257,23 @@ Wat is uw leeftijd? 80
 Jij ma jij mag zonder restrictie achol kopen
 """
 
+givenAge = int(input("Wat is uw leeftijd?"))
 
+if givenAge < 18:
+    print("je mag geen achol")
+elif givenAge > 25:
+    print("jij mag zonder restrictie achol kopen")
+else:
+    print("jij mag achol maar toon id")
 
 # ------------opdracht3----------
 """ 
 BMI Calculator   
-
+ 
 Maak een programma dat het Body Mass Index (BMI) van een persoon berekent op basis van hun lengte en hun gewicht.  
 Dit programma moet vervolgens een bericht printen dat zegt of de gebruiker ondergewicht, normaal gewicht, 
 overgewicht of obesitas heeft.   
-
+ 
 Stappenplan: 
 1. Maak een variabele aan voor zowel  gewicht als lengte en wijs de waarde hieraan toe met een input() voor float.  
 2. Deze moet natuurlijk ook duidelijk aan de gebruiker vragen om gewicht en lengte.   
@@ -209,7 +284,7 @@ Stappenplan:
 7. De volgende elif  checkt of bmi onder de 30 is en print u heeft overgewicht  
 8. De else statement print u heeft obesitas.  
 9. Print “uw BMI is: ” en vervolgens het bmi   
-
+ 
 * Bonusstap: Zoek op het internet (google is your best friend) hoe je de BMI bij de laatste print
  kan afronden en pas dit toe.   
 
@@ -221,7 +296,25 @@ U heeft obesitas
 Uw BMI is: 89.7 
 """
 
+# vraag de gebruiker om hun gewicht (in kg) en lengte (in meter)
+gewicht = float(input("Voer uw gewicht in kilogram in: "))
+lengte = float(input("Voer uw lengte in meter in: "))
 
+# bereken de BMI van de gebruiker
+bmi = gewicht / lengte ** 2
+
+# controleer de BMI van de gebruiker en geef feedback
+if bmi < 18.5:
+    print("U heeft ondergewicht.")
+elif bmi < 25:
+    print("U heeft een normaal gewicht.")
+elif bmi < 30:
+    print("U heeft overgewicht.")
+else:
+    print("U heeft obesitas.")
+
+# print de BMI van de gebruiker
+print("Uw BMI is:", round(bmi, 2))
 
 # ------------opdracht4----------
 """ 
@@ -235,13 +328,13 @@ waarvoor deze het best gebruikt kunnen worden.
 Dit gebeurt op basis van hartslag en leeftijd van een gebruiker. 
 De max hartslag wordt uitgerekend met 220 – leeftijd.  
 Geef de gebruiker een keuze voor de verschillende trainingszones en geef na de keuze de betreffende informatie.  
-
+ 
 Zone 1 = 	max (hartslag – rusthartslag) * 50% + rusthartslag  # vetverbranding & uithoudingsvermogen  
 Zone 2 = 	max (hartslag – rusthartslag) * 60% + rusthartslag  #  Cardiovasculaire  fitheid en uithoudingsvermogen  
 Zone 3 = 	max (hartslag – rusthartslag) * 70% + rusthartslag  # anaerobe en aerobe capaciteit  
 Zone 4 = 	max (hartslag – rusthartslag) * 80% + rusthartslag # maximale zuurstof opname  
 Zone 5 = 	max (hartslag – rusthartslag) * 90% + rusthartslag # maximale inspanning en sprintvermogen  
-
+ 
 Stappenplan:  
 
 1. Vraag de gebruiker om zijn/haar leeftijd via de input functie en sla deze op in een variabele genaamd "leeftijd".  
@@ -259,7 +352,44 @@ verschillende variabelen genaamd "zone1", "zone2", "zone3", "zone4" en "zone5".
 8. Print de verschillende trainingszones en de trainingsbenefits van de gekozen hartslagzone aan de gebruiker. 
 """
 
+zone = ""
+# Vraag gebruiker naar leeftijd en rusthartslag
+leeftijd = int(input("Wat is uw leeftijd? "))
+rusthartslag = int(input("Wat is uw rusthartslag? "))
 
+# Bereken maximum hartslag op basis van leeftijd
+max_hartslag = 220 - leeftijd
+
+# Bereken trainingszones op basis van rusthartslag en max hartslag
+zone_1 = int((max_hartslag - rusthartslag) * 0.5 + rusthartslag)
+zone_2 = int((max_hartslag - rusthartslag) * 0.6 + rusthartslag)
+zone_3 = int((max_hartslag - rusthartslag) * 0.7 + rusthartslag)
+zone_4 = int((max_hartslag - rusthartslag) * 0.8 + rusthartslag)
+zone_5 = int((max_hartslag - rusthartslag) * 0.9 + rusthartslag)
+
+# Vraag gebruiker naar gewenste trainingszone en trainingsvoordelen
+gewenste_zone = int(input("Welke trainingszone wilt u weten (1-5)? "))
+if gewenste_zone == 1:
+    voordelen = "Vetverbranding en uithoudingsvermogen"
+    zone = zone_1
+elif gewenste_zone == 2:
+    voordelen = "Cardiovasculaire fitheid en uithoudingsvermogen"
+    zone = zone_2
+elif gewenste_zone == 3:
+    voordelen = "Aerobe en anaerobe capaciteit"
+    zone = zone_3
+elif gewenste_zone == 4:
+    voordelen = "Maximale zuurstofopname en anaerobe capaciteit"
+    zone = zone_4
+elif gewenste_zone == 5:
+    voordelen = "Maximale inspanning en sprintvermogen"
+    zone = zone_5
+else:
+    voordelen = "Ongeldige trainingszone"
+
+# Print trainingszone en trainingsvoordelen
+print("Uw trainingszone is:", zone)
+print("Trainingsvoordelen:", voordelen)
 
 # ------------opdracht5----------
 """
@@ -269,3 +399,31 @@ Aan het einde van de toets moet je de score printen en weergeven of iemand gesla
 Deel je quiz met studiegenoten, kijk wie het hoogst scoort en geef feedback op elkaars quiz!
 """
 
+score = 0
+print("")
+vraag1 = input("What is the result of the following expression: 10 % 3?"
+               "\na) 1 "
+               "\nb) 2 "
+               "\nc) 3"
+               "\nd) 3.33"
+               "\nanswer:")
+if vraag1 == "a":
+    score += 1
+vraag2 = input("Which of the following is a valid way to declare and initialize a string variable in Python? "
+               "\na) string s = ""Hello, World!"""
+               "\nb) s = ""Hello, World!"""
+               "\nc) string s = 'Hello, World!'"
+               "\nd) s = 'Hello, World!'"
+               "\nanswer:")
+if vraag2 == "b":
+    score += 1
+vraag3 = input("Which of the following operators is used to test if two values are equal in Python?"
+               "\na) =="
+               "\nb) ="
+               "\nc) !="
+               "\nd) <>"
+               "\nanswer:")
+if vraag3 == "a":
+    score += 1
+
+print(score, "questions right")
