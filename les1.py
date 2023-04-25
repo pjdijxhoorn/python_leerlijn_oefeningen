@@ -112,7 +112,7 @@ juiste feedback voor de gebruiker uit. Laten we beginnen met deze opdracht!
 
 STAPPENPLAN:  
 
-1. Maak 2 int (integer) variabelen maximum en minimum 
+1. Maak 2 int (integer) variabelen aan: maximum en minimum 
 2. Vul deze met een userinput (zorg dat je de gebruiker de juiste feedback geeft zodat deze weet wat deze moet doen). 
 3. Maak 2 int variabelen en geef deze de waarde van een random nummer met maximum en minimum om het bereik te bepalen. 
 4. Maak een Boolean variabele en vul deze met de uitkomst van randomnummer1 == randomnummer2.  
@@ -168,8 +168,8 @@ In deze opdracht maak je een if-else statement om te checken of een gegeven geta
 6. Voer eens 0 in klopt de uitkomst? Maak de code zo dat hij bij 0 zegt dit is 0. 
 7. Je output zou er als volgt uit kunnen zien (met andere waarden):  
 
-geef een nummer om te checken of het groter of kleiner is dan 0 : 3 
-Number is groter dan 0 
+Geef een nummer om te checken of het groter of kleiner is dan 0 : 3 
+Nummer is groter dan 0 
 
 
 """
