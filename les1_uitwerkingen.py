@@ -22,46 +22,54 @@ print(welkomsgroet, naam)
 In deze opdracht gaan we de waarde voor een variabele overschrijven. 
 1. Maak een variabele genaamd: band. 
 2. Geef het de waarde  "deze band is lek" 
-3. print band. 
-4. overschrijf de waarde met: "nieuwe band op gezet"! 
-5. print band opnieuw. 
+3. Print band. 
+4. Overschrijf de waarde met: "nieuwe band op gezet"! 
+5. Print band opnieuw. 
+6. Overschrijf de band nu opnieuw met : 404
+7. Print band opnieuw.
 """
 
 band = "deze band is lek"
 print(band)
 band = "nieuwe band op gezet"
 print(band)
+band = 404
+print(band)
 
 # ------------opdracht 3----------
-""" 
-Je kan door middel van slicing een deel van de string eruit halen. Dit doe je door in een index 
-aan te geven waar de slice (onderdeel van de string die je eruit haalt) moet beginnen en waar die moet eindigen. 
-Haal met behulp van slicing de dieren uit de volgende variabelen:  
-En print deze.   
+"""
+Je kan door middel van slicing een deel van de string eruit halen. Dit doe je door in een index
+aan te geven waar de slice (onderdeel van de string die je eruit haalt) moet beginnen en waar die moet eindigen.
+Haal met behulp van slicing de dieren uit de volgende variabelen:
+En print deze.
+BONUS: haal de spaties eruit met .replace(" ", "")
 """
 
 # Deze variabelen krijg je al!
-var1 = "Hij voelde land onder zijn voeten"
-var2 = "Men brak dat krot terstond af."
-var3 = "Deze weg is lang, zeg."
-var4 = "Gaan we zelf op bezoek of komen zij?"
-var5 = "Geef me vlug die pan terwijl de kast nog open staat.."
+variabele1 = "Hij voelde land onder zijn voeten"
+variabele2 = "Men brak dat krot terstond af."
+variabele3 = "Deze weg is lang, zeg."
+variabele4 = "Gaan we zelf op bezoek of komen zij?"
+variabele5 = "Geef me vlug die pan terwijl de kast nog open staat.."
 
 # de eerste krijg je al als je het goed hebt gedaan komt hier het volgende dier uit: Eland
-oplossing1 = var1[9:15]
+oplossing1 = variabele1[9:15]
 print(oplossing1)
 
 # Tip! De volgende dieren komen voor in de variabelen: Ezel, Panter, Slang, Otter, Eland
 
 # overige oplossingen
-oplossing2 = var2[15:21]
+oplossing2 = variabele2[15:21].replace(" ", "")
 print(oplossing2)
-oplossing3 = var3[10:16]
+oplossing3 = variabele3[10:16].replace(" ", "")
 print(oplossing3)
-oplossing4 = var4[6:11]
+oplossing4 = variabele4[6:11].replace(" ", "")
 print(oplossing4)
-oplossing5 = var5[17:24]
+oplossing5 = variabele5[17:24].replace(" ", "")
 print(oplossing5)
+
+
+
 
 # //////////operatoren//////////
 # ------------opdracht1 ----------
@@ -71,23 +79,25 @@ In deze opdracht gaan we berekenen hoeveel uur jij aan Python fundamentals moet 
 Het blok Python Fundamentals bestaat uit 12 weken en is 15 ETCS waard. Elk ETC staat voor 28 studie uren. 
 Het antwoord berekenen we natuurlijk niet met rekenmachine maar gewoon via Python. Volg daarvoor de volgende stappen:  
 1. Maak een variabele ETCS aan en wijs daar 15 aan toe. 
-2. Maak een variabele studie_uren en wijs daar 28 aan toe. 
-3. Bereken hoeveel uren je per week aan deze cursus zou moeten zitten. 
-4. print deze waarde uit. 
+2. Maak een variabele studie_uren_per_ETCS en wijs daar 28 aan toe. 
+3. Maak een variabele studie_duur_in_weken aan en wijs daar 12 aan toe.
+4. Bereken Hoeveel uren je in totaal aan de studie zou moeten zitten en sla dit op in een variabele.
+4. Bereken hoeveel uren je per week aan deze cursus zou moeten zitten. 
+5. print het totaal aantal studieuren en studieuren per week uit. 
 Als je deze goed uitvoert zou je een soortgelijk antwoord moeten zien(wel met andere waarden):   
 
-Het aantal studie_uren = x 
-Het totaal per week = x 
+Het totaal aantal studie_uren =  x 
+Het totaal studie uren per week =  x 
 """
 
 ETCS = 15
-studie_uren = 28
-weken = 12
+studie_uren_per_ETCS = 28
+studie_duur_in_weken = 12
 
 totaal_studie_uren = ETCS * studie_uren
-tijd_per_week = totaal_studie_uren / weken
-print("het aantal studie_uren = ", totaal_studie_uren)
-print("het totaal per week = ", tijd_per_week)
+studie_uren_per_week = totaal_studie_uren / studie_duur_in_weken
+print("Het totaal aantal studie_uren = ", totaal_studie_uren)
+print("Het totaal studie uren per week = ", studie_uren_per_week)
 
 # ------------opdracht2----------
 
