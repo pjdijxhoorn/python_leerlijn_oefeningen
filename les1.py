@@ -151,6 +151,7 @@ Wat denk je dat getal2 is4
 
 
 
+
 # //////////If-elif-else statements//////////
 # ------------opdracht1----------
 """ 
@@ -186,7 +187,7 @@ Test of je code werkt met alle drie de groepen
 De output kan er als volgt uitzien:  
 
 Wat is uw leeftijd? 80 
-Jij ma jij mag zonder restrictie achol kopen
+Jij mag zonder restrictie alcohol kopen
 """
 
 
