@@ -108,7 +108,48 @@ def les3():
     # ------------opdracht5----------
 
 
-    """ Stappenplan code hieronder"""
+    """ 
+    OPDRACHT:
+    Wij gaan een mastermind spel maken. Bij mastermind krijgt de speler een x aantal 
+    pogingen om een geheime cijfercode van 4 cijfers te raden. bij elke poging krijgt de speler feedback.
+    een + betekent dat het nummer klopt en op de juiste plek staat. een O betekent dat het nummer voorkomt in
+    de geheime cijfercode maar niet op de juiste plek staat en een X betekent dat dit nummer 
+    niet voorkomt in de geheime cijfercode. De output komt er straks zo uit te zien:
+    
+    voer hier je antwoord in: 
+    5678
+    +oXX        
+    nog  11 pogingen over
+    voer hier je antwoord in: 
+    
+    dit betekend dus dat 5 goed is 6 goed maar op de vekeerde plek en 7 en 8 niet voorkomen.
+    
+    STAPPENPLAN:
+    1.  Begin met het maken van een functie genaamd make_random_number(). Deze functie moet 
+        4 random getallen tussen de 1 en 9 genereren en deze teruggeven als een string.
+    2.  Creëer een functie genaamd feedback_guess() die twee parameters heeft: guess (een string van 4 cijfers) 
+        en randomnumber (ook een string van 4 cijfers). 
+        De functie moet de feedback geven in de vorm van +, O en X.
+    3.  Creëer een functie genaamd play_the_game() en zet hier de volgende dingen in.
+    3.1 print een korte introductie van het spel.
+        print("Welkom bij mastermind. \n"
+              "je krijgt een 4 nummer reeks en je moet binnen 12 pogingen de juiste reeks hebben ingevuld\n"
+              " + is dit nummer klopt en staat op de juiste plek.\n"
+              " O is dit nummer klopt maar staat niet op de juiste plek.\n"
+              " X betekent dit nummer komt niet voor in deze nummerreeks\n")
+    3.2 Roep vervolgens de functie make_random_number() aan en sla deze op in een variabele binnen de functie.
+    3.3 Maak een while loop waarin de speler wordt gevraagd om een gok te doen totdat het aantal kansen op is of de 
+        speler de juiste nummerreeks heeft geraden. Maak hiervoor een variabele int chances en boolean victory.
+    3.4 Binnen de while loop, vraag de speler om een gok te doen en sla deze op in de variabele "guess".
+    3.5 Controleer of de gok van de speler overeenkomt met de willekeurige nummerreeks die is gegenereerd. 
+        Als dat het geval is, zet "victory" op "True" en geef de speler een felicitatiebericht.  
+    3.6 Als de gok van de speler niet overeenkomt met de willekeurige nummerreeks, gebruik dan de functie 
+        "feedback_guess" om feedback te geven over de gok van de speler en verminder het aantal kansen met 1.
+    3.7 Geef de speler informatie over hoeveel pogingen er nog over zijn. 
+    3.8 Vraag de speler of hij/zij verder wil spelen. Als het antwoord "ja" is, 
+        roep dan de functie "play_the_game" aan om het spel opnieuw te spelen.
+    4   Voer de functie "play_the_game" uit om het spel te starten.      
+    """
 
     def make_random_number():
         number1 = str(random.randint(1, 9))
@@ -129,14 +170,15 @@ def les3():
         print(attempt)
 
     def play_the_game():
-        randomnumber = make_random_number()
-        chances = 12
-        victory = False
         print("Welkom bij mastermind. \n"
               "je krijgt een 4 nummer reeks en je moet binnen 12 pogingen de juiste reeks hebben ingevuld\n"
               " + is dit nummer klopt en staat op de juiste plek.\n"
               " O is dit nummer klopt maar staat niet op de juiste plek.\n"
               " X betekent dit nummer komt niet voor in deze nummerreeks\n")
+        randomnumber = make_random_number()
+        chances = 12
+        victory = False
+
         while chances > 0 and victory == False:
             guess = str(input("voer hier je antwoord in: "))
 
