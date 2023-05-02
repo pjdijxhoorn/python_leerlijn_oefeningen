@@ -118,7 +118,7 @@ def les3():
     Je output kan er als volgt uitzien (met andere waarden):
     Voer hier je antwoord in:7
     False: 7
-    
+    """
     def hoeveelEierenNamDeBoerMee(eieren):
         """ Deze methode berekent of het aantal eieren na de berekening op 0 uitkomt"""
         for i in range(3):
