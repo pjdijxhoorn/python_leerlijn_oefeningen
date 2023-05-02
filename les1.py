@@ -19,9 +19,11 @@ Print de welkomsgroet en naam uit.
 In deze opdracht gaan we de waarde voor een variabele overschrijven. 
 1. Maak een variabele genaamd: band. 
 2. Geef het de waarde  "deze band is lek" 
-3. print band. 
-4. overschrijf de waarde met: "nieuwe band op gezet"! 
-5. print band opnieuw. 
+3. Print band. 
+4. Overschrijf de waarde met: "nieuwe band op gezet"! 
+5. Print band opnieuw. 
+6. Overschrijf de band nu opnieuw met : 404
+7. Print band opnieuw.
 """
 
 
@@ -35,14 +37,14 @@ En print deze.
 """
 
 # Deze variabelen krijg je al!
-var1 = "Hij voelde land onder zijn voeten"
-var2 = "Men brak dat krot terstond af."
-var3 = "Deze weg is lang, zeg."
-var4 = "Gaan we zelf op bezoek of komen zij?"
-var5 = "Geef me vlug die pan terwijl de kast nog open staat.."
+variabele1 = "Hij voelde land onder zijn voeten"
+variabele2 = "Men brak dat krot terstond af."
+variabele3 = "Deze weg is lang, zeg."
+variabele4 = "Gaan we zelf op bezoek of komen zij?"
+variabele5 = "Geef me vlug die pan terwijl de kast nog open staat.."
 
 # de eerste krijg je al als je het goed hebt gedaan komt hier het volgende dier uit: Eland
-oplossing1 = var1[9:15]
+oplossing1 = variabele1[9:15]
 print(oplossing1)
 
 # Tip! De volgende dieren komen voor in de variabelen: Ezel, Panter, Slang, Otter, Eland
@@ -57,13 +59,15 @@ In deze opdracht gaan we berekenen hoeveel uur jij aan Python fundamentals moet 
 Het blok Python Fundamentals bestaat uit 12 weken en is 15 ETCS waard. Elk ETC staat voor 28 studie uren. 
 Het antwoord berekenen we natuurlijk niet met rekenmachine maar gewoon via Python. Volg daarvoor de volgende stappen:  
 1. Maak een variabele ETCS aan en wijs daar 15 aan toe. 
-2. Maak een variabele studie_uren en wijs daar 28 aan toe. 
-3. Bereken hoeveel uren je per week aan deze cursus zou moeten zitten. 
-4. print deze waarde uit. 
+2. Maak een variabele studie_uren_per_ETCS en wijs daar 28 aan toe. 
+3. Maak een variabele studie_duur_in_weken aan en wijs daar 12 aan toe.
+4. Bereken Hoeveel uren je in totaal aan de studie zou moeten zitten en sla dit op in een variabele.
+4. Bereken hoeveel uren je per week aan deze cursus zou moeten zitten. 
+5. print het totaal aantal studieuren en studieuren per week uit. 
 Als je deze goed uitvoert zou je een soortgelijk antwoord moeten zien(wel met andere waarden):   
 
-Het aantal studie_uren = x 
-Het totaal per week = x 
+Het totaal aantal studie_uren =  x 
+Het totaal studie uren per week =  x 
 """
 
 
@@ -108,7 +112,7 @@ juiste feedback voor de gebruiker uit. Laten we beginnen met deze opdracht!
 
 STAPPENPLAN:  
 
-1. Maak 2 int (integer) variabelen maximum en minimum 
+1. Maak 2 int (integer) variabelen aan: maximum en minimum 
 2. Vul deze met een userinput (zorg dat je de gebruiker de juiste feedback geeft zodat deze weet wat deze moet doen). 
 3. Maak 2 int variabelen en geef deze de waarde van een random nummer met maximum en minimum om het bereik te bepalen. 
 4. Maak een Boolean variabele en vul deze met de uitkomst van randomnummer1 == randomnummer2.  
@@ -151,6 +155,7 @@ Wat denk je dat getal2 is4
 
 
 
+
 # //////////If-elif-else statements//////////
 # ------------opdracht1----------
 """ 
@@ -163,8 +168,8 @@ In deze opdracht maak je een if-else statement om te checken of een gegeven geta
 6. Voer eens 0 in klopt de uitkomst? Maak de code zo dat hij bij 0 zegt dit is 0. 
 7. Je output zou er als volgt uit kunnen zien (met andere waarden):  
 
-geef een nummer om te checken of het groter of kleiner is dan 0 : 3 
-Number is groter dan 0 
+Geef een nummer om te checken of het groter of kleiner is dan 0 : 3 
+Nummer is groter dan 0 
 
 
 """
@@ -186,7 +191,7 @@ Test of je code werkt met alle drie de groepen
 De output kan er als volgt uitzien:  
 
 Wat is uw leeftijd? 80 
-Jij ma jij mag zonder restrictie achol kopen
+Jij mag zonder restrictie alcohol kopen
 """
 
 

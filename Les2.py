@@ -1,6 +1,4 @@
 
-
-
 # ==========Les2==========
 # //////////if-elif-else//////////
 # ------------opdracht1----------
@@ -28,18 +26,18 @@ else:
 
 # ------------opdracht2----------
 """
-Maak de variabelen child, rich, cat geef deze allen een boolean waarde.
+Maak de variabelen i_am_a_child, i_am_rich, i_am_a_cat geef deze allen een boolean waarde.
 maaf een if-else statement.
 de if test of je rijk bent, een kind bent of een kat bent.
 Als dat zo is print je :"lucky je hoeft niet te werken" 
 anders print je: "pech je moet werken."
 """
 
-rich = False
-cat = True
-child = False
+i_am_rich = False
+i_am_a_cat = True
+i_am_a_child = False
 
-if rich == True or child == True or cat == True:
+if i_am_rich == True or i_am_a_child == True or i_am_a_cat == True:
     print("lucky je hoeft niet te werken" )
 else:
     print("pech je moet werken.")
