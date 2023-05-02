@@ -7,11 +7,25 @@ def les3():
 
     # ------------opdracht1----------
     """
-    Een functie die bij projecten handig is een functie waarmee je random getallen kan genereren.
+    Een functie die bij projecten handig is, is een functie waarmee je random getallen kan genereren. Dat gaan we in deze opdracht doen!
+    A. 
     Maak een functie met de naam random_number_generator.
     Geef deze minimal en maximal als parameters.
     Maak een variabel getal en vul deze met random.randint(minimal, maximal)
-    roep 10 keer de methode aan en print de waarde direct.
+    Roep 10 keer de methode aan en print de waarde direct.
+    Je output komt er ongeveer zo uit te zien (met andere waarden): 
+    Random getal 1: 4
+    Random getal 2: 8
+    Random getal 3: 5
+    Random getal 4: 3
+    Random getal 5: 9
+    Random getal 6: 6
+    Random getal 7: 7
+    Random getal 8: 2
+    Random getal 9: 1
+    Random getal 10: 10
+    
+    B.
     Je kan de print statement met de aanroep natuurlijk 10 maal uittikken, maar hoe zou je dit efficienter kunnen doen?
     """
 
@@ -25,28 +39,34 @@ def les3():
     # ------------opdracht2----------
 
     """
-    Stel voor je wilt in verschillende plekken in je code de gebruiker om een cijfer vragen. 
-    nu kan je natuurlijk de volgende code gebruiken: 
+    Stel je voor dat je op verschillende plekken in je code de gebruiker om een cijfer wilt vragen. 
+    Dan kan je natuurlijk de volgende code gebruiken: 
     
     getal = int(input("geef een cijfer onder de 5 op: "))
     print(getal)
     
-    maar als de gebruiker nu de string "drie" invoert krijg je een error probeer het maar.
+    Maar als de gebruiker nu de string "drie" invoert krijg je een error. Probeer het maar eens.
     Dit is natuurlijk niet handig want nu stopt je programma. 
-    wat we eigenlijk willen is dat de gebruiker ook als hij iets verkeerds invoert nog in het programma blijft.
-    hoe zou je dit kunnen oplossen? 
+    Wat we eigenlijk willen is dat de gebruiker ook bij een verkeerde invoer nog in het programma blijft.
+    Hoe zou je dit kunnen oplossen?  
     
     Stappenplan
     1. Maak een functie met de naam check_if_number en een invoer van getal.
     2. In de functie maak je een whileloop met de voorwaarde True.
-    3. maak een try-except statement.
+    3. Maak een try-except statement.
     4. In de try zet je een return van getal gecast naar een int.
-    5. In de except zet je achter de except ValueError voor een speciefiekere error.
+    5. In de except zet je achter de except: ValueError, voor een speciefiekere error.
     6. Vervolgens kan je onder de except deze regel zetten:
-    getal = int(input("Dit was incorrect, voer een nummeriek getal in:"))
+        getal = int(input("Dit was incorrect, voer een nummeriek getal in:"))
     7. Maak de variabele getal en geef deze waarde door een input zonder int casting.
     8. Declareer nogmaals getal maar geef hem nu de waarde van de functie met getal als parameter.
-    9. Bonus kan je de functie zo maken zodat deze alleen een invoer van 3 cijfers neemt?
+
+    Je output komt er ongeveer als volgt uit te zien: 
+    Vul een getal in: abc
+    Dit was incorrect, voer een nummeriek getal in: 456
+    Je hebt 456 ingevoerd.
+    
+    *Bonusvraag: Kan je de functie zo maken zodat deze alleen een invoer van 3 cijfers neemt?
     
     """
     def check_if_number(getal):
@@ -63,37 +83,44 @@ def les3():
 
 
 
-
-
     # ------------opdracht4----------
 
     """
+    Herinner je nog die leuke rekenverhalen? 
+    In deze opdracht ga je een programma schrijven dat de oplossing vindt van een verhaal over een boer, kippen en een markt. 
+    Lees het verhaal en de opdracht om met Python op het juiste antwoord te komen! 
+    
     VERHAAL:
     Een boer met een kleine boerderij heeft een paar kippen.
-    Vroeg in de ochtend pakt een mandje en verzamelt hij alle eieren die zijn kippen hebben gelegd
+    Vroeg in de ochtend pakt hij een mandje en verzamelt hij alle eieren die zijn kippen hebben gelegd
     en gaat naar de markt om deze te verkopen.
     Het is een gekke dag op de markt; de eerste klant komt bij de boer en vraagt:
     Ik wil graag de helft van alle eieren die je hebt en een half ei.
 
-    Zo gevraagd zo verkocht. De klant is koning immers.
+    Zo gevraagd, zo verkocht. De klant is immers koning.
     Na een paar minuten komt de tweede klant en vraagt vreemd genoeg hetzelfde;
     de helft van alle eieren die hij heeft en een half ei. Opnieuw is dit geen probleem.
 
-    Nou gekker kan het niet worden, maar ook de derde en laatste klant vraagt hetzelfde als zijn twee voorgangers.
+    Nou, gekker kan het niet worden, maar ook de derde en laatste klant vraagt hetzelfde als zijn twee voorgangers.
     De boer heeft alle eieren verkocht en heeft geen ei kapot hoeven te maken.
 
     Hoe kan dat en met hoeveel eieren ging de boer naar de markt?
 
     OPDRACHT:
-    Jij kan dit natuurlijk oplossen door te rekenen Maar als Programeur is het belangrijk om lui te zijn en
+    Jij kan dit natuurlijk oplossen door te rekenen. Maar als Programeur is het belangrijk om lui te zijn en
     programma's te schrijven die het werk voor jou kunnen doen!
-    (Dat dit soms juist meer werk kost is een ander verhaal)
-    Maak een functie die een getal inneemt in de parameters en test of dit getal na de berekeningen
-    uit komt op het antwoord 0. nu kan je kijken of je gelijk had.
-    BONUS1: kan je de code in de functie zo schrijven zodat je geen herhaling krijgt tip gebruik een for loop.
-    BONUS2: schrijf code die meerdere keren je methode aanroept en meerder cijfers tegelijkertijd kan testen."""
+    (Dat dit soms juist meer werk kost is een ander verhaal) Hoe kan je dat doen? 
+    1. Maak een functie die een getal inneemt in de parameters.
+    2. Test of dit getal na de berekeningen uitkomt op het antwoord 0. Nu kan je kijken of je gelijk had.
+    BONUS1: Kan je de code in de functie zo schrijven zodat je geen herhaling krijgt? (tip: gebruik een for loop)
+    BONUS2: Schrijf code die meerdere keren je methode aanroept en meerder cijfers tegelijkertijd kan testen.
+    
+    Je output kan er als volgt uitzien (met andere waarden):
+    Voer hier je antwoord in:7
+    False: 7
+    
     def hoeveelEierenNamDeBoerMee(eieren):
-        """ Deze methode berekend of het aantal eieren na de berekening op 0 uitkomt"""
+        """ Deze methode berekent of het aantal eieren na de berekening op 0 uitkomt"""
         for i in range(3):
             eieren = (eieren / 2) - 0.5
         return eieren == 0
