@@ -157,23 +157,23 @@ def les3():
     2.  Creëer een functie genaamd feedback_guess() die twee parameters heeft: guess (een string van 4 cijfers) 
         en randomnumber (ook een string van 4 cijfers). 
         De functie moet de feedback geven in de vorm van +, O en X.
-    3.  Creëer een functie genaamd play_the_game() en zet hier de volgende dingen in.
-    3.1 print een korte introductie van het spel.
+    3.  Creëer een functie genaamd play_the_game() en zet hier de volgende dingen in:
+    a.  Print een korte introductie van het spel.
         print("Welkom bij mastermind. \n"
               "je krijgt een 4 nummer reeks en je moet binnen 12 pogingen de juiste reeks hebben ingevuld\n"
               " + is dit nummer klopt en staat op de juiste plek.\n"
               " O is dit nummer klopt maar staat niet op de juiste plek.\n"
               " X betekent dit nummer komt niet voor in deze nummerreeks\n")
-    3.2 Roep vervolgens de functie make_random_number() aan en sla deze op in een variabele binnen de functie.
-    3.3 Maak een while loop waarin de speler wordt gevraagd om een gok te doen totdat het aantal kansen op is of de 
+    b.  Roep vervolgens de functie make_random_number() aan en sla deze op in een variabele binnen de functie.
+    c.  Maak een while loop waarin de speler wordt gevraagd om een gok te doen totdat het aantal kansen op is of de 
         speler de juiste nummerreeks heeft geraden. Maak hiervoor een variabele int chances en boolean victory.
-    3.4 Binnen de while loop, vraag de speler om een gok te doen en sla deze op in de variabele "guess".
-    3.5 Controleer of de gok van de speler overeenkomt met de willekeurige nummerreeks die is gegenereerd. 
+    d.  Binnen de while loop, vraag je de speler om een gok te doen. Sla deze op in de variabele "guess".
+    e.  Controleer of de gok van de speler overeenkomt met de willekeurige nummerreeks die is gegenereerd. 
         Als dat het geval is, zet "victory" op "True" en geef de speler een felicitatiebericht.  
-    3.6 Als de gok van de speler niet overeenkomt met de willekeurige nummerreeks, gebruik dan de functie 
+    f.  Als de gok van de speler niet overeenkomt met de willekeurige nummerreeks, gebruik dan de functie 
         "feedback_guess" om feedback te geven over de gok van de speler en verminder het aantal kansen met 1.
-    3.7 Geef de speler informatie over hoeveel pogingen er nog over zijn. 
-    3.8 Vraag de speler of hij/zij verder wil spelen. Als het antwoord "ja" is, 
+    g.  Geef de speler informatie over hoeveel pogingen er nog over zijn. 
+    h.  Vraag de speler of hij/zij verder wil spelen. Als het antwoord "ja" is, 
         roep dan de functie "play_the_game" aan om het spel opnieuw te spelen.
     4   Voer de functie "play_the_game" uit om het spel te starten.      
     """
