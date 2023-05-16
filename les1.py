@@ -206,7 +206,7 @@ overgewicht of obesitas heeft.
 
 Stappenplan: 
 1. Maak een variabele aan voor zowel  gewicht als lengte en wijs de waarde hieraan toe met een input() voor float.  
-2. Deze moet natuurlijk ook duidelijk aan de gebruiker vragen om gewicht en lengte.   
+2. Deze moet natuurlijk ook duidelijk aan de gebruiker vragen om gewicht(in kilo) en lengte(in meter).  
 3. Gebruik de formule BMI = gewicht/ lengte**2 om de bmi score van de gebruiker te berekenen  
 4. Maak een if elif else statement.  
 5. De if checkt of bmi is onder 18.5 en print u heeft ondergewicht.  
@@ -220,10 +220,10 @@ Stappenplan:
 
 Je output kan er als volgt uitzien: 
 
-Voer uw gewicht in Kilogram in: 210 
-Voer uw lengte in centimeter in: 153 
-U heeft obesitas 
-Uw BMI is: 89.7 
+Voer uw gewicht in Kilogram in: 83.1 
+Voer uw lengte in meter in: 1.83 
+U heeft normaal gewicht. 
+Uw BMI is: 24.81 
 """
 
 
