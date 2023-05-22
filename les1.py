@@ -272,5 +272,6 @@ Maak een quiz over de lesstof van deze week met behulp van if-elif-else statemen
 De quiz moet minimaal 5 meerkeuze vragen hebben. Bij het goede antwoord moet de score verhoogd worden.
 Aan het einde van de toets moet je de score printen en weergeven of iemand geslaagd is of niet.
 Deel je quiz met studiegenoten, kijk wie het hoogst scoort en geef feedback op elkaars quiz!
+Let op dat wanneer iemand een incorrect antwoord geeft dat je feedback geeft over wat er fout is/ het goede antwoord geeft.
 """
 

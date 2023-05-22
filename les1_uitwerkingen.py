@@ -94,7 +94,7 @@ ETCS = 15
 studie_uren_per_ETCS = 28
 studie_duur_in_weken = 12
 
-totaal_studie_uren = ETCS * studie_uren
+totaal_studie_uren = ETCS * studie_uren_per_ETCS
 studie_uren_per_week = totaal_studie_uren / studie_duur_in_weken
 print("Het totaal aantal studie_uren = ", totaal_studie_uren)
 print("Het totaal studie uren per week = ", studie_uren_per_week)
@@ -407,33 +407,78 @@ Maak een quiz over de lesstof van deze week met behulp van if-elif-else statemen
 De quiz moet minimaal 5 meerkeuze vragen hebben. Bij het goede antwoord moet de score verhoogd worden.
 Aan het einde van de toets moet je de score printen en weergeven of iemand geslaagd is of niet.
 Deel je quiz met studiegenoten, kijk wie het hoogst scoort en geef feedback op elkaars quiz!
+Let op dat wanneer iemand een incorrect antwoord geeft dat je feedback geeft over wat er fout is/ het goede antwoord geeft.
 """
 
 score = 0
 print("")
-vraag1 = input("What is the result of the following expression: 10 % 3?"
-               "\na) 1 "
-               "\nb) 2 "
-               "\nc) 3"
-               "\nd) 3.33"
-               "\nanswer:")
-if vraag1 == "a":
+question1 = input("What is the result of the following expression: 10 % 3?"
+                  "\na) 1 "
+                  "\nb) 2 "
+                  "\nc) 3"
+                  "\nd) 3.33"
+                  "\nAnswer: ")
+if question1.lower() == "a":
+    print('Correct!\n')
     score += 1
-vraag2 = input("Which of the following is a valid way to declare and initialize a string variable in Python? "
-               "\na) string s = ""Hello, World!"""
-               "\nb) s = ""Hello, World!"""
-               "\nc) string s = 'Hello, World!'"
-               "\nd) s = 'Hello, World!'"
-               "\nanswer:")
-if vraag2 == "b":
-    score += 1
-vraag3 = input("Which of the following operators is used to test if two values are equal in Python?"
-               "\na) =="
-               "\nb) ="
-               "\nc) !="
-               "\nd) <>"
-               "\nanswer:")
-if vraag3 == "a":
-    score += 1
+else:
+    print(
+        "The correct answer is a) 1. The expression 10 % 3 calculates the remainder when 10 is divided by 3, which is 1.\n")
 
-print(score, "questions right")
+question2 = input("Which of the following is a valid way to declare and initialize a string variable in Python? "
+                  "\na) string s = ""Hello, World!"""
+                  "\nb) s = Hello, World!"
+                  "\nc) string s = 'Hello, World!'"
+                  "\nd) s = 'Hello, World!'"
+                  "\nAnswer: ")
+if question2.lower() == "d":
+    print('Correct!\n')
+    score += 1
+else:
+    print(
+        "The correct answer is b) s = ""Hello, World!"". In Python, you can declare and initialize a string variable by directly assigning a value to it using the assignment operator (=).\n")
+
+question3 = input("Which of the following operators is used to test if two values are equal in Python?"
+                  "\na) =="
+                  "\nb) ="
+                  "\nc) !="
+                  "\nd) <>"
+                  "\nAnswer: ")
+if question3.lower() == "a":
+    print('Correct!\n')
+    score += 1
+else:
+    print(
+        "The correct answer is a) ==. The double equal (==) operator is used to test if two values are equal in Python.\n")
+
+question4 = input('Can you use a standalone if statement without using an elif or else statement afterwards?'
+                  '\nA) Yes, you can.'
+                  '\nB) No, you cannot.'
+                  '\nC) It depends on the situation.'
+                  '\nD) None of the above.'
+                  '\nAnswer: ')
+
+if question4.lower() == 'a':
+    print('Correct!\n')
+    score += 1
+else:
+    print(
+        'Unfortunately, that is incorrect. You can use a standalone if statement without using an elif or else statement afterwards.\n')
+
+question5 = input('Can a variable start with a number?'
+                  '\nA) No, this is not correct.'
+                  '\nB) Yes, this is correct.'
+                  '\nC) Sometimes.'
+                  '\nD) None of the above.'
+                  '\nAnswer: ')
+
+if question5.lower() == 'a':
+    print('Correct!\n')
+    score += 1
+else:
+    print('Unfortunately, that is incorrect. A variable cannot start with a number.\n')
+
+if score >= 3:
+    print('Congratulations, you have passed! You got', score, 'out of 5 correct!')
+else:
+    print('Unfortunately, you have not passed. You got', score, 'out of 5 correct.')
