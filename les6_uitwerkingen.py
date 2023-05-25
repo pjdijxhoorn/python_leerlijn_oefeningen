@@ -38,3 +38,39 @@ Stappenplan:
 1. Importeer de nodige modules, in dit geval matplotlib.pyplot en numpy
 
 """
+
+
+class MoistureReading:
+    def __init__(self, reading, date):
+        self.reading = reading
+        self.date = date
+        self.locations = self.get_locations()
+
+    def makeGraph(self):
+        plt.imshow(self.reading, cmap='viridis')
+        plt.colorbar()
+        plt.title(f'Moisture Levels in the Garden ({self.date})', fontweight="bold")
+        plt.grid(color='black', linestyle='--', linewidth=0.5)
+        plt.xlim(0, 20)
+        plt.ylim(0, 20)
+        for loc in self.locations:
+            plt.scatter(loc[1], loc[0], s=400, facecolors='none', edgecolors='r')
+        plt.show()
+
+    def get_locations(self):
+        locations = np.argwhere(self.reading < 10)
+        return np.array(locations)
+
+
+reading1 = MoistureReading(moisture_levels1, datetime(2023, 1, 1))
+reading2 = MoistureReading(moisture_levels2, datetime(2023, 1, 2))
+reading3 = MoistureReading(moisture_levels3, datetime(2023, 1, 3))
+
+reading1.makeGraph()
+print(reading1.locations)
+
+reading2.makeGraph()
+print(reading2.locations)
+
+reading3.makeGraph()
+print(reading3.locations)

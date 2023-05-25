@@ -80,3 +80,85 @@ Je Gaat een Text_Analizer klasse maken met
     algemeen werkt en niet alleen voor een specifieke tekst.
 
 """
+
+
+class TextAnalizer:
+    def __init__(self, input_file, output_file):
+        self.input_file = input_file
+        self.output_file = output_file
+        self.word_frequency = {}
+        self.language = ""
+
+    def count_words(self):
+        with open(self.input_file, 'r') as f:
+            text = f.read()
+            word_count = len(text.split())
+
+        with open(self.output_file, 'a') as f:
+            f.write(f"Word count: {word_count}\n")
+
+    def detect_language(self):
+        with open(self.input_file, 'r') as f:
+            text = f.read()
+            words = text.split()
+
+            dutch_articles = ['de', 'het', 'een']
+            english_articles = ['the', 'a', 'an']
+            german_articles = ['der', 'die', 'das', 'ein', 'eine']
+
+            dutch_count = sum([1 for word in words if word.lower() in dutch_articles])
+            english_count = sum([1 for word in words if word.lower() in english_articles])
+            german_count = sum([1 for word in words if word.lower() in german_articles])
+
+            if dutch_count > english_count and dutch_count > german_count:
+                self.language = "Nederlands"
+            elif english_count > dutch_count and english_count > german_count:
+                self.language = "English"
+            elif german_count > dutch_count and german_count > english_count:
+                self.language = "Deutsch"
+            else:
+                self.language = "Unknown"
+
+        with open(self.output_file, 'a') as f:
+            f.write('Language: ' + self.language + '\n')
+
+    def calculate_word_frequency(self):
+        if self.language == "Nederlands":
+            with open(self.input_file, 'r') as f:
+                text = f.read()
+                words = text.split()
+
+                function_words = ['ik', 'jij', 'hij', 'zij', 'wij', 'jullie', 'zij', 'mij', 'jou', 'hem', 'haar',
+                                  'ons', 'hen', 'mijn', 'jouw', 'zijn', 'haar', 'ons', 'hun', 'de', 'het', 'een',
+                                  'in', 'op', 'bij', 'door', 'voor', 'tegen', 'met', 'uit', 'van', 'naar', 'na',
+                                  'vanaf', 'tot', 'om', 'over', 'onder', 'naast', 'tussen', 'sinds', 'totdat',
+                                  'zodra', 'zolang', 'voordat', 'nadat', 'terwijl', 'hoewel', 'ofschoon',
+                                  'indien', 'tenzij', 'mits', 'aangezien', 'daarom', 'bijvoorbeeld', 'althans',
+                                  'immers', 'immers', 'namelijk', 'immers', 'ook', 'weliswaar', 'uiteraard',
+                                  'natuurlijk', 'eigenlijk', 'feite', 'blijkbaar', 'inderdaad', 'tenminste',
+                                  'misschien', 'waarschijnlijk', 'hopelijk', 'helaas', 'wel', 'niet', 'nooit',
+                                  'soms', 'vaak', 'altijd', 'wellicht', 'en', 'dat', 'zei', 'aan', 'ze', 'nog',
+                                  'te', 'die', 'toen', 'ging', 'is', 'je', 'er', 'maar', 'had', '-', 'moest',
+                                  'hele', 'was', 'deden', 'veel', 'we', 'nu', 'daar', 'dan', 'zich', 'heb', 'wat',
+                                  'als', "'t", 'zo', 'zou', 'al', 'eens', 'u']
+
+                for word in words:
+                    word_lower = word.lower()
+                    if word_lower in function_words:
+                        continue
+                    elif word_lower in self.word_frequency:
+                        self.word_frequency[word_lower] += 1
+                    else:
+                        self.word_frequency[word_lower] = 1
+
+            with open(self.output_file, 'a') as f:
+                f.write('Word frequencies:\n')
+                for word, frequency in self.word_frequency.items():
+                    if frequency >= 5:
+                        f.write(f'{word}: {frequency}\n')
+
+
+analizetext = TextAnalizer('tekstbestand.txt', 'analyse.txt')
+analizetext.count_words()
+analizetext.detect_language()
+analizetext.calculate_word_frequency()
