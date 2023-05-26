@@ -2,9 +2,13 @@
 ------------- oefening 1-------------
 Opdracht ontcijferen van de vijandelijke code
 
-Je hebt een bericht onderschept van de vijand en door goede inlichtingen ben je erachter gekomen hoe de vijand zijn berichten versleuteld.
-Dit doen ze met een ceasar cipher. dit betekent dat ze elke letter in hun bericht vervangen door een letter x aantal plekken verder in het aflabet.
-ontcijfer het bericht.
+Je hebt het volgende bericht onderschept van de vijand:
+
+nu "eju jt ffo uftu", 25
+
+En door goede inlichtingen ben je erachter gekomen hoe de vijand zijn berichten versleuteld.
+Dit doen ze met een ceasar cipher. Dit betekent dat ze elke letter in hun bericht vervangen door een letter x aantal plekken verder in het aflabet.
+Ontcijfer het bericht.
 
 Stappenplan
 maak een functie decoder deze krijgt als parameter mee text en een cijfer
