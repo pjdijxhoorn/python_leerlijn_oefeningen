@@ -147,3 +147,60 @@ h.  Vraag de speler of hij/zij verder wil spelen. Als het antwoord "ja" is,
 4   Voer de functie "play_the_game" uit om het spel te starten.      
 """
 
+
+# ------------opdracht6----------
+"""
+OPDRACHT:
+Rekenvaardigheden op basisscholen zijn niet zo goed als gewild door het ministerie van onderwijs.
+zie de link hieronder
+https://www.onderwijsinspectie.nl/actueel/nieuws/2021/04/09/veel-leerlingen-leren-niet-zo-goed-rekenen-als-ze-zouden-kunnen
+
+om te zorgen dat rekenvaardigheden verbeteren op basisscholen heb jij opdracht gekregen om een mini-applicatie te 
+schrijven die rekensommen maakt van twee random nummers en deze vervolgens print.
+Hierna kan de user een input geven. De applicatie moet vervolgens de input controleren en de user 
+hierop feedback geven of de som correct beantwoord is. Let op dit is een applicatie voor basisschool leerlingen dus 
+geen decimalen en of negatieve getallen. Probeer het eerst te maken zonder het stappen plan.
+
+1.  Importeer de vereiste module:
+    Voeg aan het begin van de code de importverklaring voor de random module toe, zodat je random getallen kunt genereren.
+2.  Definieer de functie randomNummerGenerator:
+    Schrijf een functie genaamd randomNummerGenerator die twee parameters startnummer en eindnummer accepteert. 
+    In de functie genereer je een random getal tussen startnummer en eindnummer met behulp van de random.randint() 
+    functie en retourneer je dit getal.
+3.  Definieer de functie rekenSomGenerator:
+    Schrijf een functie genaamd rekenSomGenerator die twee parameters aantalvragen en maxgetal accepteert. 
+    In deze functie initialiseer je de variabelen goedeantwoorden en fouteantwoorden met 0.
+4.  Schrijf een while-lus om de vragen te genereren:
+    Gebruik een while-lus om het aantal vragen bij te houden. De lus blijft doorgaan totdat het aantal vragen 0 is.
+5.  Genereer random getallen en selecteer een operator:
+    Binnen de while-lus roep je de functie randomNummerGenerator aan om twee random getallen te genereren.
+     Gebruik ook randomNummerGenerator om een random getal te genereren tussen 1 en 4 om de operator te selecteren. 
+     Sla het antwoord van de som op in de variabele antwoord.
+6.  Gebruik de operator om de som te genereren:
+    Implementeer een reeks if-elif-else verklaringen om de som te genereren op basis van de geselecteerde operator. 
+    Gebruik de random getallen en de operator om de som op de juiste manier af te drukken.
+7.  Ontvang de input van de gebruiker:
+    Gebruik de input() functie om de gebruiker een antwoord op de som te laten invoeren. 
+    Sla het antwoord op in de variabele keuze.
+8.  Controleer het antwoord:
+    Vergelijk het ingevoerde antwoord (keuze) met het juiste antwoord (antwoord) en geef de gebruiker feedback op basis 
+    van de vergelijking. Houd het aantal goede en foute antwoorden bij.
+9.  Druk de scores af:
+    Na elke vraag druk je de huidige scores af, dwz het aantal goede en foute antwoorden.
+10. Verminder het aantal vragen:
+    Verminder het aantal vragen met 1 aan het einde van elke lusiteratie.
+11. Vraag de gebruiker naar het maximumgetal en het aantal vragen:
+    Vraag de gebruiker om het maximumgetal en het aantal vragen in te voeren voordat je de 
+    rekenSomGenerator functie aanroept.
+12. Roep de functie rekenSomGenerator aan:
+    Roep de functie rekenSomGenerator aan met de ingevoerde waarden voor het maximumgetal en het aantal vragen.
+
+Bonus : maak de functie zo dat er een random operator wordt gebrukt van de soort + - * of /. en hier dus een som van maakt.
+Bonus bouw in dat je van te voren kan opgeven hoeveel vragen je wilt beantwoorden.
+Bonus: bouw een punten systeem erbij voor goede antwoorden en foute antwoorden.
+Tip: bij het aftrekken kom je soms negatief uit. als dit het geval is draai dan de nummers om.
+Tip: bij het delen kom je soms op decimalen uit. maak de functie zo dat dit niet meer het geval is.
+Tip modulo uitkomst van het grooste getal zetten en deze voorin in de berekening zetten
+Bonus: schrijf de functie zo dat je zelf kan ingeven hoe hoog de getalen mogen zijn
+
+"""
