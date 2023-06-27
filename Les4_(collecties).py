@@ -47,7 +47,7 @@ Om dat te verkomen dat een van de leden ontmaskerd wordt belsuit je een versleut
 natuurlijk moeten de namen ook weer ontcijferd worden.
 
 
-lijst met namen
+lijst met namen:
 Paul De Tank
 Nova de spion
 Mark de sniper

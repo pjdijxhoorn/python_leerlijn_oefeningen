@@ -46,16 +46,16 @@ def decoder(text, shiftnumber):
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
                 "U", "V", "W", "X", "Y", "Z"]
     decodedmessages = ""
-    for x in text:
-        if x == " " or x == ".":
-            decodedmessages += x
+    for letter in text:
+        if letter.upper() not in alphabet:
+            decodedmessages += letter
         else:
-            ciphernumber = alphabet.index(x.upper())
+            ciphernumber = alphabet.index(letter.upper())
             ciphernumber += shiftnumber
             if ciphernumber >= 26:
                 ciphernumber = ciphernumber % 26
-            x = alphabet[ciphernumber]
-        decodedmessages += x
+            letter = alphabet[ciphernumber]
+        decodedmessages += letter
     return decodedmessages
 
 decodedmessage = decoder("eju jt ffo uftu", 25)
@@ -85,6 +85,14 @@ def decodegrid(message):
     decodetext = "".join(decodetext)
     return decodetext
 
+def decodegrid2(text):
+    empty_string = ''
+    for i in range(6):
+        for x in range(6):
+            letter = i + x * 6
+            empty_string += (text[letter])
+    print(empty_string)
+
 inputstring ="OWOEYTJTSJOURYTQJQFXUKITLEOINXYNJFYY"
 input_str = decoder(inputstring, -5)
 
@@ -96,11 +104,11 @@ print(output_str)  # Output: jemagtrotszijnopjezelfdatjeditoplost
 ------------- oefening 2-------------
 Jij bent onderdeel van het verzet en je hebt een vergadering met alle leden hoe je het beste te werk kan gaan.
 Een van de leden zegt terecht dat hij de meeting niet wil bijwonen als zijn naam op de notulen komt want dan kan hij opgepakt worden.
-Om dat te verkomen dat een van de leden ontmaskerd wordt belsuit je een versleuteling te schrijven voor de namen.
+Om dat te verkomen dat een van de leden ontmaskerd wordt besluit je een versleuteling te schrijven voor de namen.
 natuurlijk moeten de namen ook weer ontcijferd worden.
 
 
-lijst met namen
+lijst met namen:
 Paul De Tank
 Nova de spion
 Mark de sniper
@@ -114,6 +122,7 @@ maak een functie die de namen versleuteld aan een lijst toe voegt en daarna prin
 1 zet alle letters om naar cijfers van het alphabet voeg na elke letter een - toe.
 2 als het een hoofdletter is dan begin je met tellen bij 100. A = 101, B = 102 etc.
 3 schrijf een functie die de code kan ontcijferen
+Bonus gebruik een dictionary voor het maken van het alphabet als je dit niet al gedaan had
 Bonus als de naam al voorkomt in de lijst print dan een bericht dat de naam er al in staat
 """
 
@@ -169,3 +178,29 @@ def decrypt(name):
 encryptedname ='116-1-21-12-104-5-120-1-14-11'
 decryptedname = decrypt(encryptedname)
 print(decryptedname)
+
+# ------------------------- bonus oplossing! ----------------------------------------
+Verzetsleden = []
+
+alphabet_dict = {chr(97+i): str(i+1) for i in range(26)}
+alphabet_dict.update({chr(65+i): str(101+i) for i in range(26)})
+alphabet_dict.update({' ': '000'})
+reverse_alphabet_dict = {value: key for key, value in alphabet_dict.items()}
+
+def encryption(nameinput):
+    encrypted_name = "-".join(alphabet_dict.get(char, "") for char in nameinput)
+    if encrypted_name in Verzetsleden:
+        print("the name is already in here")
+    else:
+        Verzetsleden.append(encrypted_name)
+    print(encrypted_name)
+
+def decryption(verzetsleden):
+    for name in verzetsleden:
+        split_name = name.split("-")
+        decrypted_name = "".join(reverse_alphabet_dict.get(char, "") for char in split_name)
+        print(decrypted_name)
+
+encryption(input('vul hier de naam in die je wilt versleutelen:\n'))
+encryption(input('vul hier de naam in die je wilt versleutelen:\n'))
+decryption(Verzetsleden)
