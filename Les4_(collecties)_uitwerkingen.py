@@ -1,3 +1,7 @@
+
+# ==========Les4==========
+# //////////LIST//////////
+
 """
 ------------- oefening 1-------------
 Opdracht ontcijferen van de vijandelijke code
@@ -204,3 +208,90 @@ def decryption(verzetsleden):
 encryption(input('vul hier de naam in die je wilt versleutelen:\n'))
 encryption(input('vul hier de naam in die je wilt versleutelen:\n'))
 decryption(Verzetsleden)
+
+
+# //////////TUPLE//////////
+
+
+
+# //////////SET//////////
+
+# //////////DICTONARY//////////
+
+
+"""
+------------- oefening *-------------
+
+Je krijgt hieronder een Dictonary met daarin woorden nederlands en de franse vertaling.
+
+vertaal de fransen woorden naar engels en maak hiervan een nieuwe dictonary nederlands_frans
+hier zijn de woorden in het engels in een list.
+
+english_words["head", "shoulders", "knee", "toe", "ears", "eyes", "top of the nose"]
+
+1. maak een dictonary engels _frans vanuit de code die je al hebt.
+2. draai nu de waarde om en maak daarvan een dictonary frans_engels.
+
+3. maak een dictonary vertaler aan en vul deze met dictonaries van verschillende vertalingen
+
+4. schrijf een methode waarbij je een vertaling kan opvragen.
+
+Bonus: als deze niet bestaat geef de optie om deze toe te voegen
+
+"""
+
+english_words = ["head", "shoulders", "knee", "toe", "ears", "eyes", "top of the nose"]
+
+nederlands_frans = {
+    "hoofd": "diriger",
+    "schouders": "epaules",
+    "knie": "genou",
+    "teen": "doigt de pied",
+    "oren": "oreilles",
+    "ogen": "yeux",
+    "puntje van je neus": "bout de ton nez"
+}
+print(nederlands_frans)
+
+engels_frans = {}
+
+#stap 1
+x = 0
+for key in nederlands_frans:
+    engels_frans[english_words[x]] = nederlands_frans.get(key)
+    x += 1
+print(engels_frans)
+
+#stap 2
+frans_engels = {}
+for key, value in engels_frans.items():
+    frans_engels[value] = key
+
+print(frans_engels)
+
+#stap 3
+
+vertaler = {"nederlands_frans": nederlands_frans, "engels_frans": engels_frans, "frans_engels":frans_engels}
+# stap 4
+
+def vraag_vertaling(vertaler, taal, woord):
+    if taal in vertaler:
+        woordenboek = vertaler[taal]
+        if woord in woordenboek:
+            return woordenboek[woord]
+        else:
+            nieuwe_vertaling = input(f"Vertaling voor '{woord}' in {taal} niet gevonden. Voeg een vertaling toe: ")
+            woordenboek[woord] = nieuwe_vertaling
+            return f"Vertaling '{nieuwe_vertaling}' voor '{woord}' is toegevoegd in {taal}."
+    else:
+        return f"De opgegeven taal '{taal}' is niet beschikbaar in de vertaler."
+
+# Testen van de methode
+while True:
+    print("Beschikbare talen: nederlands_frans, engels_frans, frans_engels")
+    taal = input("Voer de gewenste taal in: ")
+    woord = input("Voer het woord in waarvan je de vertaling wilt weten: ")
+    vertaling = vraag_vertaling(vertaler, taal, woord)
+    print(vertaling)
+
+

@@ -1,3 +1,5 @@
+# ==========Les4==========
+# //////////LIST//////////
 """
 ------------- oefening 1-------------
 Opdracht ontcijferen van de vijandelijke code
@@ -43,7 +45,7 @@ maar deze wordt ook nog neergezet in een volgorde van boven naar beneden in een 
 ------------- oefening 2-------------
 Jij bent onderdeel van het verzet en je hebt een vergadering met alle leden hoe je het beste te werk kan gaan.
 Een van de leden zegt terecht dat hij de meeting niet wil bijwonen als zijn naam op de notulen komt want dan kan hij opgepakt worden.
-Om dat te verkomen dat een van de leden ontmaskerd wordt belsuit je een versleuteling te schrijven voor de namen.
+Om dat te verkomen dat een van de leden ontmaskerd wordt besluit je een versleuteling te schrijven voor de namen.
 natuurlijk moeten de namen ook weer ontcijferd worden.
 
 
@@ -63,3 +65,8 @@ maak een functie die de namen versleuteld aan een lijst toe voegt en daarna prin
 3 schrijf een functie die de code kan ontcijferen
 Bonus als de naam al voorkomt in de lijst print dan een bericht dat de naam er al in staat
 """
+# //////////TUPLE//////////
+
+# //////////SET//////////
+
+# //////////DICTONARY//////////
