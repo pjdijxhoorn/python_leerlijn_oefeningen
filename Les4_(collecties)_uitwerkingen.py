@@ -1,4 +1,3 @@
-
 # ==========Les4==========
 # //////////LIST//////////
 
@@ -43,8 +42,8 @@ Bonus ontcijfer de volgende tekst "DLDTNIYIHYDJGNIFYFUMJZXIATDXCMNCYUNN" hierop 
 maar deze wordt ook nog neergezet in een volgorde van boven naar beneden in een 6 bij 6 grid. 20 verschuivingen
 """
 
-
 text = "eju jt ffo uftu"
+
 
 def decoder(text, shiftnumber):
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
@@ -62,32 +61,36 @@ def decoder(text, shiftnumber):
         decodedmessages += letter
     return decodedmessages
 
+
 decodedmessage = decoder("eju jt ffo uftu", 25)
 print(decodedmessage)
 
 extrasecretmessages = "DLDTNIYIHYDJGNIFYFUMJZXIATDXCMNCYUNN"
 decodedmessage = decoder(extrasecretmessages, 20)
 
+
 def grid_to_string(s):
-     row1 = s[0]+s[6]+s[12]+s[18]+s[24]+s[30]
-     row2 = s[1]+s[7]+s[13]+s[19]+s[25]+s[31]
-     row3 = s[2]+s[8]+s[14]+s[20]+s[26]+s[32]
-     row4 = s[3]+s[9]+s[15]+s[21]+s[27]+s[33]
-     row5 = s[4]+s[10]+s[16]+s[22]+s[28]+s[34]
-     row6 = s[5]+s[11]+s[17]+s[23]+s[29]+s[35]
-     newstring =row1+row2+row3+row4+row5+row6
-     return newstring
+    row1 = s[0] + s[6] + s[12] + s[18] + s[24] + s[30]
+    row2 = s[1] + s[7] + s[13] + s[19] + s[25] + s[31]
+    row3 = s[2] + s[8] + s[14] + s[20] + s[26] + s[32]
+    row4 = s[3] + s[9] + s[15] + s[21] + s[27] + s[33]
+    row5 = s[4] + s[10] + s[16] + s[22] + s[28] + s[34]
+    row6 = s[5] + s[11] + s[17] + s[23] + s[29] + s[35]
+    newstring = row1 + row2 + row3 + row4 + row5 + row6
+    return newstring
+
 
 def decodegrid(message):
     decodetext = []
     for x in range(6):
         row = ""
         for j in range(6):
-            letter = x+j*6
+            letter = x + j * 6
             row += message[letter]
         decodetext.append(row)
     decodetext = "".join(decodetext)
     return decodetext
+
 
 def decodegrid2(text):
     empty_string = ''
@@ -97,7 +100,8 @@ def decodegrid2(text):
             empty_string += (text[letter])
     print(empty_string)
 
-inputstring ="OWOEYTJTSJOURYTQJQFXUKITLEOINXYNJFYY"
+
+inputstring = "OWOEYTJTSJOURYTQJQFXUKITLEOINXYNJFYY"
 input_str = decoder(inputstring, -5)
 
 # output_str = grid_to_string(input_str)
@@ -130,12 +134,13 @@ Bonus gebruik een dictionary voor het maken van het alphabet als je dit niet al 
 Bonus als de naam al voorkomt in de lijst print dan een bericht dat de naam er al in staat
 """
 
-
 alfabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
            'v', 'w', 'x', 'y', 'z']
 caseAlfabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
                'U', 'V', 'W', 'X', 'Y', 'Z']
 members = []
+
+
 def addMembers(members, name):
     namecoded = ""
     for i in range(len(name)):
@@ -161,12 +166,14 @@ def addMembers(members, name):
         print("member added")
         return members
 
+
 addMembers(members, "Paul De Tank")
 addMembers(members, "Nova de spion")
 addMembers(members, "Mark de sniper")
 addMembers(members, "Sam de material man")
 addMembers(members, "Tessa de Black knight")
 print(members)
+
 
 def decrypt(name):
     nameDecrypted = ""
@@ -179,17 +186,19 @@ def decrypt(name):
             nameDecrypted += alfabet[x - 1]
     return nameDecrypted
 
-encryptedname ='116-1-21-12-104-5-120-1-14-11'
+
+encryptedname = '116-1-21-12-104-5-120-1-14-11'
 decryptedname = decrypt(encryptedname)
 print(decryptedname)
 
 # ------------------------- bonus oplossing! ----------------------------------------
 Verzetsleden = []
 
-alphabet_dict = {chr(97+i): str(i+1) for i in range(26)}
-alphabet_dict.update({chr(65+i): str(101+i) for i in range(26)})
+alphabet_dict = {chr(97 + i): str(i + 1) for i in range(26)}
+alphabet_dict.update({chr(65 + i): str(101 + i) for i in range(26)})
 alphabet_dict.update({' ': '000'})
 reverse_alphabet_dict = {value: key for key, value in alphabet_dict.items()}
+
 
 def encryption(nameinput):
     encrypted_name = "-".join(alphabet_dict.get(char, "") for char in nameinput)
@@ -199,16 +208,17 @@ def encryption(nameinput):
         Verzetsleden.append(encrypted_name)
     print(encrypted_name)
 
+
 def decryption(verzetsleden):
     for name in verzetsleden:
         split_name = name.split("-")
         decrypted_name = "".join(reverse_alphabet_dict.get(char, "") for char in split_name)
         print(decrypted_name)
 
+
 encryption(input('vul hier de naam in die je wilt versleutelen:\n'))
 encryption(input('vul hier de naam in die je wilt versleutelen:\n'))
 decryption(Verzetsleden)
-
 
 # //////////TUPLE//////////
 """
@@ -247,23 +257,39 @@ tips:
 # Create a dictionary to store patient dossiers
 patient_database = {}
 
+# Test Patients
+test_patient = ('1', '987654321', 'John', 'Doe')
+test_patient_values = ['70', '30', '180', '120/80']
+patient_database[test_patient] = test_patient_values
+
+test_patient = ('2', '1234567', 'John', 'Doe')
+test_patient_values = ['70', '30', '180', '120/80']
+patient_database[test_patient] = test_patient_values
+
+test_patient = ('3', '1234567', 'John', 'Doe')
+test_patient_values = ['70', '30', '180', '120/80']
+patient_database[test_patient] = test_patient_values
+
 def main_menu():
     while True:
         print("Menu:")
         print("1. Zoek patiënt op")
-        print("2. Maak nieuwe patiënt")
-        print("3. Pas waardes van patiënt aan")
-        print("4. Exit")
+        print("2. toon alle patienten")
+        print("3. Maak nieuwe patiënt")
+        print("4. Pas waardes van patiënt aan")
+        print("5. Exit")
 
         choice = input("Maak een keuze: ")
 
         if choice == '1':
             zoek_patient_op()
         elif choice == '2':
-            create_patient_dossier()
+            display_all_patients()
         elif choice == '3':
-            pas_waardes_aan()
+            create_patient_dossier()
         elif choice == '4':
+            pas_waardes_aan()
+        elif choice == '5':
             break
         else:
             print("Ongeldige keuze. Probeer opnieuw.")
@@ -275,17 +301,40 @@ def zoek_patient_op():
         if key[0] == patientnummer:
             print("Patiëntendossier:")
             display_dossier(key, value)
+            print("")
             return
     print("Patiënt niet gevonden.\n")
 
 
-def display_dossier(key, values):
-    print("{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<10}".format(
+def display_all_patients():
+    print("+", "=" * 128, "+")
+    print(
+        "||", " "*55, "PatientDossiers", " "*55, "||")
+    print("+", "=" * 128, "+")
+    print("|{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<19}|".format(
         "BSN", "Patiëntnummer", "Voornaam", "Achternaam", "Gewicht", "Leeftijd", "Lengte", "Bloeddruk"))
-    print("=" * 130)
-    print("{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<10}".format(
+    x = 0
+    for key, value in patient_database.items():
+        x += 1
+        print("+", "-" * 128, "+")
+        print("|{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<19}|".format(
+            key[1], key[0], key[2], key[3], value[0], value[1], value[2], value[3]))
+        if len(patient_database) == x:
+            print("+", "-" * 128, "+", "\n")
+
+
+
+def display_dossier(key, values):
+    print("+", "=" * 128, "+")
+    print(
+        "||"," "*30,"PatientDossier"," "*30,"||")
+    print("+", "=" * 128, "+")
+    print("|{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<19}|".format(
+        "BSN", "Patiëntnummer", "Voornaam", "Achternaam", "Gewicht", "Leeftijd", "Lengte", "Bloeddruk"))
+    print("+", "-" * 128, "+")
+    print("|{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<19}|".format(
         key[1], key[0], key[2], key[3], values[0], values[1], values[2], values[3]))
-    print("=" * 130, "\n")
+    print("+", "-" * 128, "+")
 
 
 def create_patient_dossier():
@@ -299,7 +348,7 @@ def create_patient_dossier():
     bloeddruk = input("Voer de bloeddruk in: ")
     value = [gewicht, leeftijd, lengte, bloeddruk]
     patient_database[(patientnummer, bsn, voornaam, achternaam)] = value
-    print("De nieuwe patiënt is toegevoegd.")
+    print("De nieuwe patiënt is toegevoegd. \n")
 
 
 def pas_waardes_aan():
@@ -320,17 +369,8 @@ def pas_waardes_aan():
     else:
         print("Patiënt niet gevonden.\n")
 
-# Create a test patient
-test_patient = ('123', '987654321', 'John', 'Doe')
-test_patient_values = ['70', '30', '180', '120/80']
-patient_database[test_patient] = test_patient_values
-
-
 # Start het hoofdmenu
 main_menu()
-
-print(patient_database)
-
 
 
 # //////////SET//////////
@@ -434,9 +474,6 @@ def main():
 
 main()
 
-
-
-
 # //////////DICTONARY//////////
 """
 ------------- oefening *-------------
@@ -514,23 +551,25 @@ print(nederlands_frans)
 
 engels_frans = {}
 
-#stap 1
+# stap 1
 x = 0
 for key in nederlands_frans:
     engels_frans[english_words[x]] = nederlands_frans.get(key)
     x += 1
 print(engels_frans)
 
-#stap 2
+# stap 2
 frans_engels = {}
 for key, value in engels_frans.items():
     frans_engels[value] = key
 
 print(frans_engels)
 
-#stap 3
+# stap 3
 
-vertaler = {"nederlands_frans": nederlands_frans, "engels_frans": engels_frans, "frans_engels":frans_engels}
+vertaler = {"nederlands_frans": nederlands_frans, "engels_frans": engels_frans, "frans_engels": frans_engels}
+
+
 # stap 4
 
 def vraag_vertaling(vertaler, taal, woord):
@@ -545,6 +584,7 @@ def vraag_vertaling(vertaler, taal, woord):
     else:
         return f"De opgegeven taal '{taal}' is niet beschikbaar in de vertaler."
 
+
 # Testen van de methode
 while True:
     print("Beschikbare talen: nederlands_frans, engels_frans, frans_engels")
@@ -552,5 +592,3 @@ while True:
     woord = input("Voer het woord in waarvan je de vertaling wilt weten: ")
     vertaling = vraag_vertaling(vertaler, taal, woord)
     print(vertaling)
-
-
