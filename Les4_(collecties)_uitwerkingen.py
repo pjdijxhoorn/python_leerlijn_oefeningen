@@ -211,13 +211,272 @@ decryption(Verzetsleden)
 
 
 # //////////TUPLE//////////
+"""
+------------- oefening *-------------
+Wanneer je binnenkomt bij het ziekenhuis wordt jou patientdodossier binnengehaald.
+Binnen dat patientdossier zijn er bepaalde dingen die aangepast kunnen worden zoals leeftijd, gewicht, lengte, bloeddruk.
+Maar er zijn ook dingen die niet aangepast mogen worden zoals bsn, patientnummer.
+Hieronder is een applicatie geschreven maar deze is niet geheel correct
+want in dit geval mogen bsn en patientnummer nog steeds aangepast worden.
+
+Vaker dan dat je helemaal van niks begint zal je als codeur code moeten fixen of aanvullen hiervoor is het ook
+belangrijk dat je code kan lezen en fouten kan vinden. Let op er staan hier mogelijk dingen in de code die je nog niet
+begrijpt dat maakt niet uit. start met te onderzoeken wat de code doet en lees de tips!
+
+De opdracht heeft verschillende stappen
+    1.Maak het zo dat de bsn, naam en patientnummer niet meer overschreven kunnen worden na aanmaak
+      maar wel getoont kunnen worden.
+    2.bouw de applicatie verder uit dat alle andere waardes wel gewijzigd kunnen worden
+      met aparte functies die om een input vragen ipv via de paramaters de waardes zetten.
+    3. maak een zoek functie die werkt op basis van patientnummer voor de database. die werkt met een input
+    bonus: schrijf een menu voor deze aplicatie.
+    met de volgende keuzes:
+        keuze1. zoek patient op
+        keuze2. maak nieuwe patient
+        keuze3. pas waardes van patient aan.
+    gebruik hierbij input in de functies
+
+tips:
+    1. tuple kunnen gebruikt worden als key voor dictionaries.
+    2. tuple kan meerdere waardes bevatten.
+    3. dictionary-keys zijn niet overschrijfbaar.
+    4. je kan wanneer een tuple tot key gemaakt is itereren over de key-waardes.
+    5.
+
+"""
+# Create a dictionary to store patient dossiers
+patient_database = {}
+
+def main_menu():
+    while True:
+        print("Menu:")
+        print("1. Zoek patiënt op")
+        print("2. Maak nieuwe patiënt")
+        print("3. Pas waardes van patiënt aan")
+        print("4. Exit")
+
+        choice = input("Maak een keuze: ")
+
+        if choice == '1':
+            zoek_patient_op()
+        elif choice == '2':
+            create_patient_dossier()
+        elif choice == '3':
+            pas_waardes_aan()
+        elif choice == '4':
+            break
+        else:
+            print("Ongeldige keuze. Probeer opnieuw.")
+
+
+def zoek_patient_op():
+    patientnummer = input("Voer het patiëntnummer in: ")
+    for key, value in patient_database.items():
+        if key[0] == patientnummer:
+            print("Patiëntendossier:")
+            display_dossier(key, value)
+            return
+    print("Patiënt niet gevonden.\n")
+
+
+def display_dossier(key, values):
+    print("{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<10}".format(
+        "BSN", "Patiëntnummer", "Voornaam", "Achternaam", "Gewicht", "Leeftijd", "Lengte", "Bloeddruk"))
+    print("=" * 130)
+    print("{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<10}".format(
+        key[1], key[0], key[2], key[3], values[0], values[1], values[2], values[3]))
+    print("=" * 130, "\n")
+
+
+def create_patient_dossier():
+    bsn = input("Voer het BSN in: ")
+    patientnummer = input("Voer het patiëntnummer in: ")
+    voornaam = input("Voer de voornaam in: ")
+    achternaam = input("Voer de achternaam in: ")
+    gewicht = input("Voer het gewicht in: ")
+    leeftijd = input("Voer de leeftijd in: ")
+    lengte = input("Voer de lengte in: ")
+    bloeddruk = input("Voer de bloeddruk in: ")
+    value = [gewicht, leeftijd, lengte, bloeddruk]
+    patient_database[(patientnummer, bsn, voornaam, achternaam)] = value
+    print("De nieuwe patiënt is toegevoegd.")
+
+
+def pas_waardes_aan():
+    patientnummer = input("Voer het patiëntnummer in: ")
+    if patientnummer in patient_database:
+        patient = patient_database[(patientnummer,)]
+        print("Patiëntgegevens:")
+        display_dossier((patientnummer,) + patient_database[patientnummer], patient)
+        field = input("Welke waarde wilt u aanpassen (gewicht/leeftijd/lengte/bloeddruk)? ")
+        if field == 'gewicht':
+            new_gewicht = input("Voer het nieuwe gewicht in: ")
+            patient[0] = new_gewicht
+        elif field == 'leeftijd':
+            new_leeftijd = input("Voer de nieuwe leeftijd in: ")
+            patient[1] = new_leeftijd
+        else:
+            print("Ongeldige keuze.\n")
+    else:
+        print("Patiënt niet gevonden.\n")
+
+# Create a test patient
+test_patient = ('123', '987654321', 'John', 'Doe')
+test_patient_values = ['70', '30', '180', '120/80']
+patient_database[test_patient] = test_patient_values
+
+
+# Start het hoofdmenu
+main_menu()
+
+print(patient_database)
 
 
 
 # //////////SET//////////
 
-# //////////DICTONARY//////////
+"""
+------------- oefening *-------------
+opdracht je gaat dit jaar met de hele familie suprises maken voor sinterklaas.
+Maar die ene oom had zichzelf vorig jaar (perongeluk) meerdere keren toegevoegd. daarom besluit je om voor dit jaar een
+miniapplicatie te schrijven deze app neemt namen in. Maar elke naam kan slechts eenmaal ingevoerd worden.
+vervolgens geeft de app wanneer gevraag twee namen uit. 1 persoon die de suprise maakt en 1 die de suprise ontvangt.
+elk persoon moet zowel een 1 suprise maken als ontvangen en je hebt geen gevallen dat iemand voor zichelf een suprise moet maken.
 
+Stappenplan:
+Stap 1: Initialisatie van sets
+    Er worden twee lege sets recievers en givers aangemaakt. Dit zijn sets om namen van ontvangers en gevers bij te houden.
+Stap 2: Definitie van add_names-functie
+
+    Vraag de gebruiker om het aantal namen dat ze willen toevoegen.
+    Voer een lus uit voor het opgegeven aantal keren:
+    a. Vraag de gebruiker om een naam in te voeren.
+    b. Voeg de ingevoerde naam toe aan zowel de recievers-set als de givers-set.
+Stap 3: Definitie van create_surprise_pairs-functie
+
+    Maak een lege lijst met de naam pairs om de verrassingsparen bij te houden.
+    Blijf doorgaan zolang de givers-set niet leeg is:
+    a. Kies willekeurig een ontvanger (reciever) en een gever (giver) uit de sets met behulp van de random.choice-functie.
+    b. Controleer of de ontvanger en de gever niet dezelfde zijn.
+    c. Verwijder de gekozen ontvanger en gever uit respectievelijk de recievers- en givers-sets.
+    d. Voeg het paar in de vorm van "ontvanger-gever" toe aan de pairs-lijst.
+    Toon de gemaakte verrassingsparen door door de pairs-lijst te lopen en de ontvanger en gever afzonderlijk weer te geven.
+Stap 4: Definitie van main-functie
+
+    Start een oneindige lus met de while True-verklaring.
+    Toon een menu met drie opties:
+    a. "Voeg namen toe"
+    b. "Maak surprise-paren"
+    c. "Stop"
+    Vraag de gebruiker om een keuze.
+    Als de keuze gelijk is aan "1", roep dan de add_names-functie aan om namen toe te voegen.
+    Als de keuze gelijk is aan "2":
+    a. Controleer of er minstens twee namen in de recievers-set staan.
+    b. Als dat het geval is, roep dan de create_surprise_pairs-functie aan om verrassingsparen te maken en weer te geven, en breek dan uit de lus.
+    c. Als er minder dan twee namen zijn, geef dan een foutmelding weer.
+    Als de keuze gelijk is aan "3", breek dan uit de lus om het programma te beëindigen.
+    Als de keuze geen van de bovenstaande opties is, geef dan een foutmelding weer.
+Stap 5: Roep de main-functie aan
+
+Roep de main-functie aan om het programma uit te voeren.
+
+"""
+import random
+
+recievers = set()
+givers = set()
+
+
+def add_names():
+    number_of_names = int(input(f"voer het aantal namen in dat je wilt: "))
+    for x in range(number_of_names):
+        name = input(f"Voer naam in: ")
+        recievers.add(name)
+        givers.add(name)
+
+
+def create_surprise_pairs():
+    pairs = []
+    while len(givers) != 0:
+        reciever = random.choice(list(recievers))
+        giver = random.choice(list(givers))
+        if reciever != giver:
+            givers.remove(giver)
+            recievers.remove(reciever)
+            pairs.append(reciever + "-" + giver)
+    print("Surprise-paren:")
+    for pair in pairs:
+        reciever, giver = pair.split("-")
+        print(f"{giver} geeft een surprise aan {reciever}")
+
+
+def main():
+    while True:
+        print("\n1. Voeg namen toe")
+        print("2. Maak surprise-paren")
+        print("3. Stop")
+
+        choice = input("Kies een optie: ")
+
+        if choice == "1":
+            add_names()
+        elif choice == "2":
+            if len(recievers) < 2:
+                print("Voeg minimaal twee namen toe voordat je surprise-paren maakt.")
+            else:
+                create_surprise_pairs()
+                break
+        elif choice == "3":
+            break
+        else:
+            print("Ongeldige keuze. Kies 1, 2 of 3.")
+
+
+main()
+
+
+
+
+# //////////DICTONARY//////////
+"""
+------------- oefening *-------------
+Een naam verzinnen is lastig hierom besluit je om je vrienden, familie en kennissen te vragen om te helpen.
+Je besluit om een programma te schrijven om bij te houden welke namen zij noemen. 
+Maar je wilt geen dubbele namen. 
+Omdat je wel wil weten welke naam het meest populair is moet je wel bij houden welke naam vaker gekozen wordt.
+ook wil je dat mensen zoveel namen kunnen doorgeven als ze zelf willen.
+probeer eerst zonder hulp een programma hiervoor te schrijven.
+
+Stappenplan:
+
+1. Maak een lege dictonary genaamd name_counter.
+2. Maak een oneindige while lus met while true.
+3. maak een input die om een naam vraagt en deze aan de variable name toewijst.
+    De tekts hiervan bevat "enter a name (or exit to exit)"
+4. Maak een if die checkt of name exit is en break bij deze code
+5. Maak een if statement die checkt of de name al in de lijst staat. 
+    Als dat niet zo is voeg de naam toe met een waarde van 1. 
+    Als de naam er wel in staat pas de waarde aan naar de waarde +1.
+6. Print de waardes 
+
+
+"""
+name_counter = {}
+
+while True:
+    name = input("Enter a name (or 'quit' to exit): ")
+
+    if name.lower() == 'quit':
+        break
+
+    if name in name_counter:
+        name_counter[name] += 1
+    else:
+        name_counter[name] = 1
+
+    print("Name counts:")
+    for name, count in name_counter.items():
+        print(f"{name}: {count}")
 
 """
 ------------- oefening *-------------

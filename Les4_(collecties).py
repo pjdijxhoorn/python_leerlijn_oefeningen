@@ -67,6 +67,182 @@ Bonus als de naam al voorkomt in de lijst print dan een bericht dat de naam er a
 """
 # //////////TUPLE//////////
 
+"""
+------------- oefening *-------------
+Wanneer je binnenkomt bij het ziekenhuis wordt jou patientdodossier binnengehaald.
+Binnen dat patientdossier zijn er bepaalde dingen die aangepast kunnen worden zoals leeftijd, gewicht, lengte, bloeddruk.
+Maar er zijn ook dingen die niet aangepast mogen worden zoals bsn, patientnummer.
+Hieronder is een applicatie geschreven maar deze is niet geheel correct
+want in dit geval mogen bsn en patientnummer nog steeds aangepast worden.
+
+Vaker dan dat je helemaal van niks begint zal je als codeur code moeten fixen of aanvullen hiervoor is het ook
+belangrijk dat je code kan lezen en fouten kan vinden. Let op er staan hier mogelijk dingen in de code die je nog niet
+begrijpt dat maakt niet uit. start met te onderzoeken wat de code doet en lees de tips!
+
+De opdracht heeft verschillende stappen:
+    1.Maak het zo dat de bsn, naam en patientnummer niet meer overschreven kunnen worden na aanmaak
+      maar wel getoont kunnen worden.
+    2.bouw de applicatie verder uit dat alle andere waardes wel gewijzigd kunnen worden
+      met aparte functies die om een input vragen ipv via de paramaters de waardes zetten.
+    3. maak een zoek functie die werkt op basis van patientnummer voor de database. die werkt met een input
+    bonus: schrijf een menu voor deze aplicatie.
+    met de volgende keuzes:
+        keuze1. zoek patient op
+        keuze2. maak nieuwe patient
+        keuze3. pas waardes van patient aan.
+    gebruik hierbij input in de functies
+
+tips:
+    1. tuple kunnen gebruikt worden als key voor dictionaries.
+    2. tuple kan meerdere waardes bevatten.
+    3. dictionary-keys zijn niet overschrijfbaar.
+    4. je kan wanneer een tuple tot key gemaakt is itereren over de key-waardes.
+    5.
+
+"""
+# Create a dictionary to store patient dossiers
+patient_database = {}
+
+def display_dossier(dossier):
+    print("Patiëntendossier:")
+    print("{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<10}".format(
+        "BSN", "Patiëntnummer","Voornaam", "Achternaam", "Gewicht", "Leeftijd", "Lengte", "Bloeddruk"))
+    print("=" * 130)
+    print("{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<10}".format(
+        dossier[0], dossier[1], dossier[2], dossier[3], dossier[4], dossier[5], dossier[6], dossier[7]))
+    print("=" * 130, "\n")
+
+
+def create_patient_dossier(bsn, patientnummer,voornaam, achternaam, gewicht, leeftijd, lengte, bloeddruk):
+    return [bsn, patientnummer, voornaam, achternaam, gewicht, leeftijd, lengte, bloeddruk]
+
+
+def pas_waardes_aan(dossier, new_gewicht,new_leeftijd):
+    dossier[2] = new_gewicht
+    dossier[3] = new_leeftijd
+    print("Gewicht bijgewerkt naar", new_gewicht)
+    print("Leeftijd bijgewerkt naar", new_leeftijd, "\n")
+
+# Add test-patient dossiers with patient numbers as keys
+patient_database['P001'] = create_patient_dossier("123456789", "P001", "John", "Doe", 70, 30, 170, "120/80")
+
+# Display the patient dossier for a specific patient number
+display_dossier(patient_database['P001'])
+
+# Probeer BSN en Patiëntnummer te wijzigen (zou niet moeten lukken) lukt nu wel!
+patient_database['P001'][0] = "mag niet"
+patient_database['P001'][1] = "mag ook niet"
+
+# Update the weight and age for a specific patient number
+pas_waardes_aan(patient_database['P001'], 80, 35)
+
+# Display the updated test-patient dossier
+display_dossier(patient_database['P001'])
+
 # //////////SET//////////
 
+"""
+------------- oefening *-------------
+opdracht je gaat dit jaar met de hele familie suprises maken voor sinterklaas.
+Maar die ene oom had zichzelf vorig jaar (perongeluk) meerdere keren toegevoegd. daarom besluit je om voor dit jaar een
+miniapplicatie te schrijven deze app neemt namen in. Maar elke naam kan slechts eenmaal ingevoerd worden.
+vervolgens geeft de app wanneer gevraag twee namen uit. 1 persoon die de suprise maakt en 1 die de suprise ontvangt.
+elk persoon moet zowel een 1 suprise maken als ontvangen en je hebt geen gevallen dat iemand voor zichelf een suprise moet maken.
+
+Stappenplan:
+Stap 1: Initialisatie van sets
+    Er worden twee lege sets recievers en givers aangemaakt. Dit zijn sets om namen van ontvangers en gevers bij te houden.
+Stap 2: Definitie van add_names-functie
+
+    Vraag de gebruiker om het aantal namen dat ze willen toevoegen.
+    Voer een lus uit voor het opgegeven aantal keren:
+    a. Vraag de gebruiker om een naam in te voeren.
+    b. Voeg de ingevoerde naam toe aan zowel de recievers-set als de givers-set.
+Stap 3: Definitie van create_surprise_pairs-functie
+
+    Maak een lege lijst met de naam pairs om de verrassingsparen bij te houden.
+    Blijf doorgaan zolang de givers-set niet leeg is:
+    a. Kies willekeurig een ontvanger (reciever) en een gever (giver) uit de sets met behulp van de random.choice-functie.
+    b. Controleer of de ontvanger en de gever niet dezelfde zijn.
+    c. Verwijder de gekozen ontvanger en gever uit respectievelijk de recievers- en givers-sets.
+    d. Voeg het paar in de vorm van "ontvanger-gever" toe aan de pairs-lijst.
+    Toon de gemaakte verrassingsparen door door de pairs-lijst te lopen en de ontvanger en gever afzonderlijk weer te geven.
+Stap 4: Definitie van main-functie
+
+    Start een oneindige lus met de while True-verklaring.
+    Toon een menu met drie opties:
+    a. "Voeg namen toe"
+    b. "Maak surprise-paren"
+    c. "Stop"
+    Vraag de gebruiker om een keuze.
+    Als de keuze gelijk is aan "1", roep dan de add_names-functie aan om namen toe te voegen.
+    Als de keuze gelijk is aan "2":
+    a. Controleer of er minstens twee namen in de recievers-set staan.
+    b. Als dat het geval is, roep dan de create_surprise_pairs-functie aan om verrassingsparen te maken en weer te geven, en breek dan uit de lus.
+    c. Als er minder dan twee namen zijn, geef dan een foutmelding weer.
+    Als de keuze gelijk is aan "3", breek dan uit de lus om het programma te beëindigen.
+    Als de keuze geen van de bovenstaande opties is, geef dan een foutmelding weer.
+Stap 5: Roep de main-functie aan
+
+Roep de main-functie aan om het programma uit te voeren.
+
+"""
 # //////////DICTONARY//////////
+
+"""
+------------- oefening *-------------
+Een naam verzinnen is lastig hierom besluit je om je vrienden, familie en kennissen te vragen om te helpen.
+Je besluit om een programma te schrijven om bij te houden welke namen zij noemen. 
+Maar je wilt geen dubbele namen. 
+Omdat je wel wil weten welke naam het meest populair is moet je wel bij houden welke naam vaker gekozen wordt.
+ook wil je dat mensen zoveel namen kunnen doorgeven als ze zelf willen.
+probeer eerst zonder hulp een programma hiervoor te schrijven.
+
+Stappenplan:
+
+1. Maak een lege dictonary genaamd name_counter.
+2. Maak een oneindige while lus met while true.
+3. maak een input die om een naam vraagt en deze aan de variable name toewijst.
+    De tekts hiervan bevat "enter a name (or exit to exit)"
+4. Maak een if die checkt of name exit is en break bij deze code
+5. Maak een if statement die checkt of de name al in de lijst staat. 
+    Als dat niet zo is voeg de naam toe met een waarde van 1. 
+    Als de naam er wel in staat pas de waarde aan naar de waarde +1.
+6. Print de waardes 
+
+
+"""
+
+"""
+------------- oefening *-------------
+
+Je krijgt hieronder een Dictonary met daarin woorden nederlands en de franse vertaling.
+
+vertaal de fransen woorden naar engels en maak hiervan een nieuwe dictonary nederlands_frans
+hier zijn de woorden in het engels in een list.
+
+english_words["head", "shoulders", "knee", "toe", "ears", "eyes", "top of the nose"]
+
+1. maak een dictonary engels _frans vanuit de code die je al hebt.
+2. draai nu de waarde om en maak daarvan een dictonary frans_engels.
+
+3. maak een dictonary vertaler aan en vul deze met dictonaries van verschillende vertalingen
+
+4. schrijf een methode waarbij je een vertaling kan opvragen.
+
+Bonus: als deze niet bestaat geef de optie om deze toe te voegen
+
+"""
+
+english_words = ["head", "shoulders", "knee", "toe", "ears", "eyes", "top of the nose"]
+
+nederlands_frans = {
+    "hoofd": "diriger",
+    "schouders": "epaules",
+    "knie": "genou",
+    "teen": "doigt de pied",
+    "oren": "oreilles",
+    "ogen": "yeux",
+    "puntje van je neus": "bout de ton nez"
+}
+print(nederlands_frans)
