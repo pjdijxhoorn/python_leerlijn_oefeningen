@@ -115,9 +115,9 @@ programma's te schrijven die het werk voor jou kunnen doen!
 BONUS1: Kan je de code in de functie zo schrijven zodat je geen herhaling krijgt? (tip: gebruik een for loop)
 BONUS2: Schrijf code die meerdere keren je methode aanroept en meerder cijfers tegelijkertijd kan testen.
 
-Je output kan er als volgt uitzien (met andere waarden):
-Voer hier je antwoord in:7
-False: 7
+Een voorbeeld van Je output kan er als volgt uitzien (met andere waarden):
+Voer hier je antwoord in:10
+False: 10
 """
 def hoeveelEierenNamDeBoerMee(eieren):
     """ Deze methode berekent of het aantal eieren na de berekening op 0 uitkomt"""
