@@ -1,5 +1,36 @@
 """
 OPDRACHT:
+Maak een tekstbestand met de naam, de geboortedatum en het telefoonnummer van je vrienden.
+Maak een programma waarbij je de naam van een vriend invoert en het programma de gegevens van die vriend afdrukt
+met behulp van het tekstbestand dat je hebt gemaakt.
+let op dat je een ty inbouwt zodat zelfs als het bestand niet gevonden wordt je programma blijft draaien.
+
+voorbeeld format txt bestand:
+Naam1,Geboortedatum1,Telefoonnummer1
+Naam2,Geboortedatum2,Telefoonnummer2
+Naam3,Geboortedatum3,Telefoonnummer3
+
+"""
+def vriend_gegevens_opzoeken(zoek_naam):
+    try:
+        with open('vrienden.txt', 'r') as bestand:
+            for regel in bestand:
+                naam, geboortedatum, telefoonnummer = regel.strip().split(',')
+                if naam == zoek_naam:
+                    print(f"Naam: {naam}\nGeboortedatum: {geboortedatum}\nTelefoonnummer: {telefoonnummer}")
+                    return
+            print("Vriend niet gevonden.")
+    except FileNotFoundError:
+        print("Het tekstbestand 'vrienden.txt' is niet gevonden.")
+
+def main():
+    zoek_naam = input("Voer de naam van een vriend in: ")
+    vriend_gegevens_opzoeken(zoek_naam)
+
+
+main()
+"""
+OPDRACHT:
 Opdrachtbeschrijving:
 
 Je gaat een taalanalysetool maken met behulp van Python.

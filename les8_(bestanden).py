@@ -1,5 +1,19 @@
 """
 OPDRACHT:
+Maak een tekstbestand met de naam, de geboortedatum en het telefoonnummer van je vrienden.
+Maak een programma waarbij je de naam van een vriend invoert en het programma de gegevens van die vriend afdrukt
+met behulp van het tekstbestand dat je hebt gemaakt.
+let op dat je een ty inbouwt zodat zelfs als het bestand niet gevonden wordt je programma blijft draaien.
+
+voorbeeld format txt bestand:
+Naam1,Geboortedatum1,Telefoonnummer1
+Naam2,Geboortedatum2,Telefoonnummer2
+Naam3,Geboortedatum3,Telefoonnummer3
+
+"""
+
+"""
+OPDRACHT:
 Opdrachtbeschrijving:
 
 Je gaat een taalanalysetool maken met behulp van Python.
