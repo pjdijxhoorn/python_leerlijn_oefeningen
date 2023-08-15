@@ -1,4 +1,97 @@
 """
+Oefening 1: Eenvoudige klasse en object
+
+Maak een klasse genaamd Person met de volgende eigenschappen: name en age.
+Maak vervolgens een object van deze klasse met de naam person1
+en stel de naam in op "Alice" en de leeftijd op 30. Print ten slotte de naam
+en leeftijd van het object.
+Breid de klasse Person uit met een methode genaamd greet,
+die een begroeting afdrukt met de naam van de persoon.
+"""
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hallo, ik ben {self.name}!")
+
+
+person1 = Person("Alice", 30)
+print("Naam:", person1.name)
+print("Leeftijd:", person1.age)
+person1.greet()
+"""
+Oefening 2: Bankrekeningklasse
+
+Maak een klasse genaamd BankAccount met de volgende eigenschappen: 
+account_number, account_holder en balance. V
+oeg methoden toe om geld op te nemen en geld te storten in de rekening. 
+Schrijf vervolgens code om een object van BankAccount te maken, 
+geld te storten en op te nemen, en het saldo af te drukken.
+"""
+
+
+class BankAccount:
+    def __init__(self, account_number, account_holder, balance=0):
+        self.account_number = account_number
+        self.account_holder = account_holder
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print("Onvoldoende saldo.")
+
+    def print_balance(self):
+        print(f"Saldo van rekening {self.account_number} van {self.account_holder}: {self.balance}")
+
+
+account1 = BankAccount("12345", "Alice")
+account1.deposit(1000)
+account1.withdraw(500)
+account1.print_balance()
+"""
+Oefening 3: Dierenklasse met overerving
+
+Maak een klasse genaamd Animal met de eigenschappen name en sound. 
+Maak vervolgens twee subklassen genaamd Dog en Cat, 
+die van de Animal-klasse erven. Voeg aan elke subklasse een methode 
+make_sound toe om het geluid van het dier af te drukken. 
+Maak objecten van zowel Dog als Cat en roep de make_sound-methode aan.
+
+"""
+
+
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+
+class Dog(Animal):
+    def make_sound(self):
+        print(f"{self.name} zegt: Woof!")
+
+
+class Cat(Animal):
+    def make_sound(self):
+        print(f"{self.name} zegt: Meow!")
+
+
+dog = Dog("Buddy", "Woof")
+cat = Cat("Whiskers", "Meow")
+
+dog.make_sound()
+cat.make_sound()
+
+"""
 OPDRACHT BESCHRIJVING:
 Jij als getalenteerde mountainbiker wil graag ervoor zorgen dat jouw fiets(en) altijd goed onderhouden zijn
 en klaar om te gebruiken voor de volgende race. Daarom besluit je om een kleine applicatie
@@ -24,6 +117,7 @@ STAPPEN:
 12. Vervang het onderdeel "banden" door een nieuw onderdeel met de naam "reserveband".
 13. Verwijder het onderdeel "remmen" uit de lijst met onderdelen van "mijn_fiets".
 """
+
 
 class Onderdeel:
     def __init__(self, naam, max_afstand, huidige_afstand, merk):
@@ -55,7 +149,8 @@ class Fiets:
             onderdeel.huidige_afstand += afstand
             if onderdeel.huidige_afstand >= onderdeel.max_afstand:
                 print("Waarschuwing: het onderdeel", onderdeel.naam,
-                      "heeft de maximale afstand van ", onderdeel.max_afstand ," overschreden met",onderdeel.huidige_afstand - onderdeel.max_afstand, " km en moet worden vervangen.")
+                      "heeft de maximale afstand van ", onderdeel.max_afstand, " overschreden met",
+                      onderdeel.huidige_afstand - onderdeel.max_afstand, " km en moet worden vervangen.")
         print("------------------------")
 
     def vervang_onderdeel(self, onderdeel):
@@ -67,6 +162,7 @@ class Fiets:
                 break
         else:
             print("Fout: het onderdeel", onderdeel.naam, "is niet gevonden in de lijst met")
+
     def voeg_onderdeel_toe(self, Onderdeel):
         self.onderdelen.append(Onderdeel)
 
@@ -76,13 +172,14 @@ class Fiets:
                 del self.onderdelen[i]
                 break
 
+
 # Aanmaak van de onderdelen
-pedalen = Onderdeel ('pedalen', 4000, 0, 'Shimano')
-banden = Onderdeel('banden', 5000, 0,'Continental')
-ketting = Onderdeel('ketting', 2000,0, 'Shimano')
-remmen = Onderdeel('remmen', 3000, 0,'Magura')
-zadel =   Onderdeel('zadel', 8000,0, 'Selle Royal')
-reserveband = Onderdeel('banden', 8000,0, 'lekkerbanje')
+pedalen = Onderdeel('pedalen', 4000, 0, 'Shimano')
+banden = Onderdeel('banden', 5000, 0, 'Continental')
+ketting = Onderdeel('ketting', 2000, 0, 'Shimano')
+remmen = Onderdeel('remmen', 3000, 0, 'Magura')
+zadel = Onderdeel('zadel', 8000, 0, 'Selle Royal')
+reserveband = Onderdeel('banden', 8000, 0, 'lekkerbanje')
 # Aanmaak van een fiets
 mijn_fiets = Fiets('racefiets', 54, 'rood', 'Giant', 'nog een variabele')
 
@@ -99,5 +196,5 @@ mijn_fiets.print_onderdelen()
 mijn_fiets.fietstocht(3000)
 # vervangt de huidige afstand van het onderdeel door nieuwe onderdeel
 mijn_fiets.vervang_onderdeel(reserveband)
-  # voegt een nieuw onderdeel toe aan de lijst met onderdelen
+# voegt een nieuw onderdeel toe aan de lijst met onderdelen
 mijn_fiets.verwijder_onderdeel('remmen')  # verwijdert het onderdeel 'remmen' uit de lijst met onderdelen

@@ -1,4 +1,37 @@
 """
+Oefening 1: Eenvoudige klasse en object
+
+Maak een klasse genaamd Person met de volgende eigenschappen: name en age.
+Maak vervolgens een object van deze klasse met de naam person1
+en stel de naam in op "Alice" en de leeftijd op 30. Print ten slotte de naam
+en leeftijd van het object.
+Breid de klasse Person uit met een methode genaamd greet,
+die een begroeting afdrukt met de naam van de persoon.
+"""
+
+"""
+Oefening 2: Bankrekeningklasse
+
+Maak een klasse genaamd BankAccount met de volgende eigenschappen: 
+account_number, account_holder en balance. V
+oeg methoden toe om geld op te nemen en geld te storten in de rekening. 
+Schrijf vervolgens code om een object van BankAccount te maken, 
+geld te storten en op te nemen, en het saldo af te drukken.
+"""
+
+"""
+Oefening 3: Dierenklasse met overerving
+
+Maak een klasse genaamd Animal met de eigenschappen name en sound. 
+Maak vervolgens twee subklassen genaamd Dog en Cat, 
+die van de Animal-klasse erven. Voeg aan elke subklasse een methode 
+make_sound toe om het geluid van het dier af te drukken. 
+Maak objecten van zowel Dog als Cat en roep de make_sound-methode aan.
+
+"""
+
+
+"""
 OPDRACHT BESCHRIJVING:
 Jij als getalenteerde mountainbiker wil graag ervoor zorgen dat jouw fiets(en) altijd goed onderhouden zijn
 en klaar om te gebruiken voor de volgende race. Daarom besluit je om een kleine applicatie
