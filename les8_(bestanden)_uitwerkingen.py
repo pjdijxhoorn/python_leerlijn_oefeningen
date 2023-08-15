@@ -31,6 +31,57 @@ def main():
 main()
 """
 OPDRACHT:
+Als docent ben je benieuwd wat het gemiddelde aan cijfers is voor jou klas.
+maak met je python programma die dit voor je berekent. 
+en een leeg tekstbestand maakt en vervolgens vult met een input voor persoon en cijfer.
+maak ook een input voor het vak maar deze hoeft maar 1 keer ingevuld te worden.
+maak een functie die het gemiddelde van de cijfers van je tekstbestand berekend en print
+
+"""
+def maakcijferbestand():
+    # Aanmaken van een leeg tekstbestand genaamd "cijfers.txt"
+    with open("cijfers.txt", "w") as file:
+        pass
+
+    # Gebruikersinvoer en opslag in het tekstbestand
+    vak = input("Voer de naam van het vak in: ")
+    while True:
+        persoon = input("Voer de naam van de persoon in (of typ 'stop' om te stoppen): ")
+        if persoon.lower() == 'stop':
+            break
+
+
+        cijfer = float(input("Voer het cijfer in: "))
+
+        # Toevoegen van de invoer aan het tekstbestand
+        with open("cijfers.txt", "a") as file:
+            file.write(f"{persoon},{vak},{cijfer}\n")
+
+    # Berekenen van het gemiddelde van de cijfers
+    gemiddelde = bereken_gemiddelde()
+
+    print(f"Het gemiddelde van de cijfers is: {gemiddelde:.2f}")
+
+def bereken_gemiddelde():
+    total_cijfer = 0
+    count = 0
+
+    # Lezen van het tekstbestand en berekenen van het gemiddelde
+    with open("cijfers.txt", "r") as file:
+        for line in file:
+            _, _, cijfer = line.strip().split(',')
+            total_cijfer += float(cijfer)
+            count += 1
+
+    if count == 0:
+        return 0
+    return total_cijfer / count
+
+
+maakcijferbestand()
+
+"""
+OPDRACHT:
 Opdrachtbeschrijving:
 
 Je gaat een taalanalysetool maken met behulp van Python.

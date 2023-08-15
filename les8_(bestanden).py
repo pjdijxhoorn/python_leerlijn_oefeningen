@@ -14,6 +14,20 @@ Naam3,Geboortedatum3,Telefoonnummer3
 
 """
 OPDRACHT:
+Als docent ben je benieuwd wat het gemiddelde aan cijfers is voor jou klas.
+maak met je python programma die dit voor je berekent. 
+en een leeg tekstbestand maakt en vervolgens vult met een input voor persoon en cijfer.
+maak ook een input voor het vak maar deze hoeft maar 1 keer ingevuld te worden.
+maak een functie die het gemiddelde van de cijfers van je tekstbestand berekend en print
+
+"""
+
+
+
+
+
+"""
+OPDRACHT:
 Opdrachtbeschrijving:
 
 Je gaat een taalanalysetool maken met behulp van Python.
