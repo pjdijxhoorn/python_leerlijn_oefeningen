@@ -1,6 +1,13 @@
 # ==========Les4==========
 # //////////LIST//////////
 """
+Oefening 1: Optellen van Lijstelementen
+Schrijf een functie die een lijst van getallen als invoer neemt
+en het totaal van alle elementen in de lijst berekent en retourneert.
+"""
+
+
+"""
 ------------- oefening 1-------------
 Opdracht ontcijferen van de vijandelijke code
 

@@ -1,8 +1,20 @@
 # ==========Les4==========
 # //////////LIST//////////
+"""
+Oefening 1: Optellen van Lijstelementen
+Schrijf een functie die een lijst van getallen als invoer neemt
+en het totaal van alle elementen in de lijst berekent en retourneert.
+"""
+def calculate_total(numbers):
+    total = sum(numbers)
+    return total
+
+numbers = [5, 10, 15, 20]
+result = calculate_total(numbers)
+print("Total:", result)
 
 """
-------------- oefening 1-------------
+------------- oefening 2-------------
 Opdracht ontcijferen van de vijandelijke code
 
 Je hebt het volgende bericht onderschept van de vijand:
