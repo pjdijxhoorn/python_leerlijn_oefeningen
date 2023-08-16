@@ -4,9 +4,29 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from moistureReadings import moisture_levels1, moisture_levels2, moisture_levels3
+"""
+Opdracht1:
+
+Maak een staafdiagram
+verwerk hierbij  de volgende fruitsoorten appel, banaan, sinasappel, druif en verbindt hier aantallen aan.
+geef de diagram een x en y label en een titel. en toon de diagram.
 
 """
-OPDRACHT:
+
+"""
+Opdracht2:
+
+in deze opdracht ga je de verkoopcijfers van jou bedrijf visualiseren.
+maak 2 arrays aan. 1 voor 12 maanden. En 1 voor verkoopcijfers. 
+zorg dat de aantallen maanden overeenkomt met het aantal cijfers.
+maak een lijngrafiek voor je data. 
+maak de tabel zo op dat deze de data goed toont.
+
+"""
+
+
+"""
+OPDRACHT3:
 
 Je buurman heeft geen groene vingers maar houdt ontzettend van mooie tuinen. Zijn planten gaan altijd dood omdat hij
 niet weet hoeveel en wanneer hij de planten water moet geven. Daarom heeft hij besloten om een systeem aan te

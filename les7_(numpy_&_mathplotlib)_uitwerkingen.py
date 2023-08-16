@@ -4,9 +4,50 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from moistureReadings import moisture_levels1, moisture_levels2, moisture_levels3
+"""
+Opdracht1:
+
+Maak een staafdiagram
+verwerk hierbij  de volgende fruitsoorten appel, banaan, sinasappel, druif en verbindt hier aantallen aan.
+geef de diagram een x en y label en een titel. en toon de diagram.
 
 """
-OPDRACHT:
+
+fruit = ['Appel', 'Banaan', 'Sinaasappel', 'Druif']
+aantallen = np.array([20, 15, 30, 10])
+
+plt.bar(fruit, aantallen)
+plt.xlabel('Fruit')
+plt.ylabel('Aantal')
+plt.title('Staafdiagram van Fruit Aantallen')
+plt.show()
+
+"""
+Opdracht2:
+
+in deze opdracht ga je de verkoopcijfers van jou bedrijf visualiseren.
+maak 2 arrays aan. 1 voor 12 maanden. En 1 voor verkoopcijfers. 
+zorg dat de aantallen maanden overeenkomt met het aantal cijfers.
+maak een lijngrafiek voor je data. 
+maak de tabel zo op dat deze de data goed toont.
+
+"""
+
+# Simuleer verkoopgegevens voor een periode van 12 maanden
+maanden = np.arange(1, 13)
+verkoop = np.array([150, 200, 280, 320, 400, 450, 550, 600, 700, 800, 900, 1000])
+
+# Maak een grafiek van de verkoopgegevens
+plt.plot(maanden, verkoop, marker='o', linestyle='-', color='b')
+plt.title("Verkoop van Product X")
+plt.xlabel("Maanden")
+plt.ylabel("Verkoop")
+plt.xticks(maanden)
+plt.grid()
+plt.show()
+
+"""
+OPDRACHT3:
 
 Je buurman heeft geen groene vingers maar houdt ontzettend van mooie tuinen. Zijn planten gaan altijd dood omdat hij
 niet weet hoeveel en wanneer hij de planten water moet geven. Daarom heeft hij besloten om een systeem aan te
