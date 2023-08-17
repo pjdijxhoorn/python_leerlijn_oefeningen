@@ -1,3 +1,5 @@
+import random
+
 # ==========Les4==========
 # //////////LIST//////////
 """
@@ -5,16 +7,62 @@ Oefening 1: Optellen van Lijstelementen
 Schrijf een functie die een lijst van getallen als invoer neemt
 en het totaal van alle elementen in de lijst berekent en retourneert.
 """
+
+
 def calculate_total(numbers):
     total = sum(numbers)
     return total
+
 
 numbers = [5, 10, 15, 20]
 result = calculate_total(numbers)
 print("Total:", result)
 
 """
-------------- oefening 2-------------
+oefening 2
+Maak de lijst ‘getallen’ aan: getallen = [2, 4, 7, 11, 19]
+
+Voer de volgende opdrachten uit:
+
+Voeg het getal 22 toe aan (het einde van) de lijst 
+Voeg het getal 6 toe tussen 4 en 7
+Vervang het getal 4 door het getal 5
+
+"""
+getallen = [2, 4, 7, 11, 19]
+getallen.insert(2, 6)
+getallen.remove(4)
+getallen.insert(1, 5)
+print(getallen)
+
+
+"""
+oefening 3
+In de Fibonacci rij bestaat elk getal uit de som van de twee voorgaande getallen:
+1, 1, 2, 3, 5… De som van 1 en 1 is 2, de som van 1 en 2 is 3, enzovoorts. 
+Implementeer de functie ‘fibon-acci’ die als parameter de lijst 
+‘fibonacci_reeks = [1, 1]’ krijgt aangeleverd, 
+en een element toe-voegt aan de lijst,
+bestaande uit de vorige twee elementen.
+Roep de functie meerdere keren aan (Bijvoorbeeld met een for-loop).
+"""
+# Definieer de functie 'fibonacci' met parameters 'fibonaccireeks' en 'aantal'.
+def fibonacci(fibonaccireeks, aantal):
+    for _ in range(aantal - 2):  # Verminder met 2 omdat we al de eerste twee getallen hebben.
+        fibonaccireeks.append(fibonaccireeks[-1] + fibonaccireeks[-2])
+
+# Vraag de gebruiker om het gewenste aantal getallen voor de fibonacci-reeks.
+aantal = int(input("Voer het aantal getallen in dat je wilt hebben voor de fibonacci_reeks: "))
+fibonaccireeks = [1, 1]  # Initialiseer de fibonacci-reeks met de eerste twee getallen.
+
+# Roep de 'fibonacci'-functie aan met de gegeven fibonacci-reeks en het gewenste aantal getallen.
+fibonacci(fibonaccireeks, aantal)
+
+# Toon de uiteindelijke fibonacci-reeks na de functieaanroep.
+print(fibonaccireeks)
+
+"""
+------------- oefening 4-------------
 Opdracht ontcijferen van de vijandelijke code
 
 Je hebt het volgende bericht onderschept van de vijand:
@@ -234,6 +282,51 @@ decryption(Verzetsleden)
 
 # //////////TUPLE//////////
 """
+oefening 1
+Maak de lijst ‘getal_kwadraat_paar’ aan voor getallen 
+1 tot en met 5 waarin elk element bestaat uit een tuple 
+die het getal en het bijbehorende kwadraat bevat. 
+Gebruik een list comprehension.
+"""
+
+getal_kwadraat_paar = [(getal, getal*getal)for getal in range(1, 6)]
+print(getal_kwadraat_paar)
+
+"""
+oefening2
+Schrijf een dobbelspel voor een dobbelsteen met waardes 1 t/m 6. 
+Als de speler 5 of 6 gooit, heeft hij gewonnen. 
+Als hij 1 of 2 gooit, heeft hij verloren. 
+Als hij 3 of 4 gooit, mag hij nog een keer gooien. 
+Gebruik de random.randrange functie uit de module random voor 
+de dobbelsteenwaarde. 
+Hou de game status bij in een variabele die gecheckt wordt door
+een while loop.
+Gebruik if/elif waarde in tuple om te checken 
+of een waarde gegooid is. Print de uitkomst.
+"""
+
+
+def spel():
+    game_status = True
+    while game_status:
+        uitkomst = dobbelen()
+        if uitkomst in (5, 6):
+            print(f"Gefeliciteerd! Je hebt gewonnen met {uitkomst}.")
+        elif uitkomst in (1, 2):
+            print(f"Helaas, je hebt verloren met {uitkomst}. Probeer het opnieuw.")
+            game_status = False
+        else:
+            print(f"Je hebt {uitkomst} gegooid. Gooi nog een keer!")
+
+
+def dobbelen():
+    return random.randrange(1, 7)
+
+
+spel()
+
+"""
 ------------- oefening *-------------
 Wanneer je binnenkomt bij het ziekenhuis wordt jou patientdodossier binnengehaald.
 Binnen dat patientdossier zijn er bepaalde dingen die aangepast kunnen worden zoals leeftijd, gewicht, lengte, bloeddruk.
@@ -282,6 +375,7 @@ test_patient = ('3', '1234567', 'John', 'Doe')
 test_patient_values = ['70', '30', '180', '120/80']
 patient_database[test_patient] = test_patient_values
 
+
 def main_menu():
     while True:
         print("Menu:")
@@ -321,7 +415,7 @@ def zoek_patient_op():
 def display_all_patients():
     print("+", "=" * 128, "+")
     print(
-        "||", " "*55, "PatientDossiers", " "*55, "||")
+        "||", " " * 55, "PatientDossiers", " " * 55, "||")
     print("+", "=" * 128, "+")
     print("|{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<19}|".format(
         "BSN", "Patiëntnummer", "Voornaam", "Achternaam", "Gewicht", "Leeftijd", "Lengte", "Bloeddruk"))
@@ -335,11 +429,10 @@ def display_all_patients():
             print("+", "-" * 128, "+", "\n")
 
 
-
 def display_dossier(key, values):
     print("+", "=" * 128, "+")
     print(
-        "||"," "*30,"PatientDossier"," "*30,"||")
+        "||", " " * 30, "PatientDossier", " " * 30, "||")
     print("+", "=" * 128, "+")
     print("|{:<15} | {:<15} | {:<15} | {:<15} | {:<10} | {:<10} | {:<10} | {:<19}|".format(
         "BSN", "Patiëntnummer", "Voornaam", "Achternaam", "Gewicht", "Leeftijd", "Lengte", "Bloeddruk"))
@@ -381,16 +474,58 @@ def pas_waardes_aan():
     else:
         print("Patiënt niet gevonden.\n")
 
+
 # Start het hoofdmenu
 main_menu()
 
-
 # //////////SET//////////
+"""
+Oefening 1
+
+Gegeven de verzameling {3, 44, 17, 23, 58, 9, 36}
+Voer de volgende opdrachten uit:
+Voeg de waarde 27 aan de verzameling toe.
+Verwijder de waarde 23 uit de verzameling’.
+Druk alle waarden in de verzameling tussen 20 en 50 af.
+"""
+
+nummers = {3, 44, 17, 23, 58, 9, 36}
+nummers.add(27)
+print(nummers)
+nummers.remove(23)
+print(nummers)
+for nummer in nummers:
+    if 50> nummer> 20:
+        print(nummer)
+
+"""
+Oefening2
+Gegeven de verzamelingen {11, 22, 33} en {5, 11, 16, 22}
+
+Gebruik alleen set functies om de volgende verzamelingen te creëren:
+
+{33}
+{5, 16, 33}
+{5, 11, 16, 22, 33}
+{11, 22}
+
+"""
+verzameling1 = {11, 22, 33}
+verzameling2 = {5, 11, 16, 22}
+verzameling3 = verzameling1-verzameling2
+print(verzameling3)
+verzameling4 = (verzameling2 - verzameling1) | verzameling3
+print(verzameling4)
+verzameling5= verzameling2|verzameling3
+print(verzameling5)
+verzameling6 = verzameling1-verzameling3
+print(verzameling6)
+
 
 """
 ------------- oefening *-------------
 opdracht je gaat dit jaar met de hele familie suprises maken voor sinterklaas.
-Maar die ene oom had zichzelf vorig jaar (perongeluk) meerdere keren toegevoegd. daarom besluit je om voor dit jaar een
+Maar die ene oom had zichzelf vorig jaar ("perongeluk") meerdere keren toegevoegd. daarom besluit je om voor dit jaar een
 miniapplicatie te schrijven deze app neemt namen in. Maar elke naam kan slechts eenmaal ingevoerd worden.
 vervolgens geeft de app wanneer gevraag twee namen uit. 1 persoon die de suprise maakt en 1 die de suprise ontvangt.
 elk persoon moet zowel een 1 suprise maken als ontvangen en je hebt geen gevallen dat iemand voor zichelf een suprise moet maken.
@@ -488,7 +623,36 @@ main()
 
 # //////////DICTONARY//////////
 """
-------------- oefening *-------------
+------------- oefening 1-------------
+Gegeven een woordenboek van Internet toplevel domeinen:
+
+In:
+tlds = {'Nederland':'nl', 'Verenigde Staten':'us', 'Duitsland':'de'}
+
+Voer de volgende opdrachten uit en toon de resultaten:
+
+1. Controleer of het woordenboek de sleutel ‘Duitsland’ bevat.
+2. Controleer of het woordenboek de sleutel ‘Frankrijk’ bevat.
+3. Itereer door de sleutel-waarde paren en toon ze in 2-kolommen.
+4. Voeg het sleutel-waarde paar ‘Zweden’ : ‘sw’ toe.
+5. Wijzig de waarde van de sleutel ‘Zweden’ in ‘se’.
+6. Gebruik een dictionary comprehension om sleutels en waarden te verwisselen.
+7. Uitgaande van het resultaat van f) gebruik een dictionary comprehension om alle landnamen te converteren naar hoofdletters.
+"""
+tlds = {'Nederland': 'nl', 'Verenigde Staten': 'us', 'Duitsland': 'de'}
+print('Duitsland', 'Duitsland' in tlds)
+print('Frankrijk', 'Frankrijk' in tlds)
+for land, afkorting in tlds.items():
+        print(land, "\t->\t", afkorting)
+tlds['Zweden'] = "sw"
+tlds['zweden'] = "se"
+for afkorting, land in tlds.items():
+    print(land, "\t->\t", afkorting)
+for afkorting, land in tlds.items():
+    print(afkorting.upper(), land)
+
+"""
+------------- oefening 2-------------
 Een naam verzinnen is lastig hierom besluit je om je vrienden, familie en kennissen te vragen om te helpen.
 Je besluit om een programma te schrijven om bij te houden welke namen zij noemen. 
 Maar je wilt geen dubbele namen. 
@@ -526,9 +690,36 @@ while True:
     print("Name counts:")
     for name, count in name_counter.items():
         print(f"{name}: {count}")
-
 """
-------------- oefening *-------------
+------------- oefening 3-------------
+Maak een woordenboek van vrienden met hun voornaam als sleutel en hun leeftijd als waarde 
+(we nemen even aan dat alle voornamen verschillend zijn).
+
+Voer de volgende opdrachten uit en toon de resultaten:
+
+Druk naam en leeftijd af van al je vrienden, alfabetisch gesorteerd op naam.
+Druk de naam af van al je vrienden die 30 jaar of ouder zijn.
+Verhoog alle leeftijden in het woordenboek met 1.
+Verwijder alle vrienden waarvan de naam begint met de letter ‘B’
+"""
+vrienden = {'Bas': 32, 'Michelle': 28, 'Richard': 29, 'Bartho': 24, 'Tim': 30, 'Jitze': 32}
+vrienden_sorted = sorted(vrienden.items())
+print(vrienden_sorted)
+
+for vriend, leeftijd in vrienden.items():
+    if leeftijd >= 30:
+        print(vriend, '->', leeftijd)
+
+for vriend, leeftijd in vrienden.items():
+    leeftijd = leeftijd+1
+    print(vriend, leeftijd)
+
+for key in list(vrienden.keys()):
+    if key.startswith('B'):
+        del vrienden[key]
+print(vrienden)
+"""
+------------- oefening 4-------------
 
 Je krijgt hieronder een Dictonary met daarin woorden nederlands en de franse vertaling.
 

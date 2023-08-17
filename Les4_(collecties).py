@@ -6,9 +6,30 @@ Schrijf een functie die een lijst van getallen als invoer neemt
 en het totaal van alle elementen in de lijst berekent en retourneert.
 """
 
+"""
+oefening 2
+Maak de lijst ‘getallen’ aan: getallen = [2, 4, 7, 11, 19]
+
+Voer de volgende opdrachten uit:
+
+Voeg het getal 22 toe aan (het einde van) de lijst 
+Voeg het getal 6 toe tussen 4 en 7
+Vervang het getal 4 door het getal 5
 
 """
-------------- oefening 1-------------
+"""
+oefening 3
+In de Fibonacci rij bestaat elk getal uit de som van de twee voorgaande getallen:
+1, 1, 2, 3, 5… De som van 1 en 1 is 2, de som van 1 en 2 is 3, enzovoorts. 
+Implementeer de functie ‘fibon-acci’ die als parameter de lijst 
+‘fibonacci_reeks = [1, 1]’ krijgt aangeleverd, 
+en een element toe-voegt aan de lijst,
+bestaande uit de vorige twee elementen.
+Roep de functie meerdere keren aan (Bijvoorbeeld met een for-loop).
+"""
+
+"""
+------------- oefening 4-------------
 Opdracht ontcijferen van de vijandelijke code
 
 Je hebt het volgende bericht onderschept van de vijand:
@@ -73,6 +94,28 @@ maak een functie die de namen versleuteld aan een lijst toe voegt en daarna prin
 Bonus als de naam al voorkomt in de lijst print dan een bericht dat de naam er al in staat
 """
 # //////////TUPLE//////////
+"""
+oefening 1
+Maak de lijst ‘getal_kwadraat_paar’ aan voor getallen 
+1 tot en met 5 waarin elk element bestaat uit een tuple 
+die het getal en het bijbehorende kwadraat bevat. 
+Gebruik een list comprehension.
+"""
+
+
+"""
+oefening2
+Schrijf een dobbelspel voor een dobbelsteen met waardes 1 t/m 6. 
+Als de speler 5 of 6 gooit, heeft hij gewonnen. 
+Als hij 1 of 2 gooit, heeft hij verloren. 
+Als hij 3 of 4 gooit, mag hij nog een keer gooien. 
+Gebruik de random.randrange functie uit de module random voor 
+de dobbelsteenwaarde. 
+Hou de game status bij in een variabele die gecheckt wordt door
+een while loop.
+Gebruik if/elif waarde in tuple om te checken 
+of een waarde gegooid is. Print de uitkomst.
+"""
 
 """
 ------------- oefening *-------------
@@ -147,11 +190,33 @@ pas_waardes_aan(patient_database['P001'], 80, 35)
 display_dossier(patient_database['P001'])
 
 # //////////SET//////////
+"""
+Oefening 1
+
+Gegeven de verzameling {3, 44, 17, 23, 58, 9, 36}
+Voer de volgende opdrachten uit:
+Voeg de waarde 27 aan de verzameling toe.
+Verwijder de waarde 23 uit de verzameling’.
+Druk alle waarden in de verzameling tussen 20 en 50 af.
+"""
+
+"""
+Oefening2
+Gegeven de verzamelingen {11, 22, 33} en {5, 11, 16, 22}
+
+Gebruik wiskundige verzamelingsoperatoren om de volgende verzamelingen te creëren:
+
+{33}
+{5, 16, 33}
+{5, 11, 16, 22, 33}
+{11, 22}
+
+"""
 
 """
 ------------- oefening *-------------
 opdracht je gaat dit jaar met de hele familie suprises maken voor sinterklaas.
-Maar die ene oom had zichzelf vorig jaar (perongeluk) meerdere keren toegevoegd. daarom besluit je om voor dit jaar een
+Maar die ene oom had zichzelf vorig jaar ("perongeluk") meerdere keren toegevoegd. daarom besluit je om voor dit jaar een
 miniapplicatie te schrijven deze app neemt namen in. Maar elke naam kan slechts eenmaal ingevoerd worden.
 vervolgens geeft de app wanneer gevraag twee namen uit. 1 persoon die de suprise maakt en 1 die de suprise ontvangt.
 elk persoon moet zowel een 1 suprise maken als ontvangen en je hebt geen gevallen dat iemand voor zichelf een suprise moet maken.
@@ -195,9 +260,25 @@ Roep de main-functie aan om het programma uit te voeren.
 
 """
 # //////////DICTONARY//////////
-
 """
-------------- oefening *-------------
+------------- oefening 1-------------
+Gegeven een woordenboek van Internet toplevel domeinen:
+
+In:
+tlds = {'Nederland':'nl', 'Verenigde Staten':'us', 'Duitsland':'de'}
+
+Voer de volgende opdrachten uit en toon de resultaten:
+
+1. Controleer of het woordenboek de sleutel ‘Duitsland’ bevat.
+2. Controleer of het woordenboek de sleutel ‘Frankrijk’ bevat.
+3. Itereer door de sleutel-waarde paren en toon ze in 2-kolommen.
+4. Voeg het sleutel-waarde paar ‘Zweden’ : ‘sw’ toe.
+5. Wijzig de waarde van de sleutel ‘Zweden’ in ‘se’.
+6. Gebruik een dictionary comprehension om sleutels en waarden te verwisselen.
+7. Uitgaande van het resultaat van f) gebruik een dictionary comprehension om alle landnamen te converteren naar hoofdletters.
+"""
+"""
+------------- oefening 2-------------
 Een naam verzinnen is lastig hierom besluit je om je vrienden, familie en kennissen te vragen om te helpen.
 Je besluit om een programma te schrijven om bij te houden welke namen zij noemen. 
 Maar je wilt geen dubbele namen. 
@@ -219,9 +300,20 @@ Stappenplan:
 
 
 """
-
 """
-------------- oefening *-------------
+------------- oefening 3-------------
+Maak een woordenboek van vrienden met hun voornaam als sleutel en hun leeftijd als waarde 
+(we nemen even aan dat alle voornamen verschillend zijn).
+
+Voer de volgende opdrachten uit en toon de resultaten:
+
+Druk naam en leeftijd af van al je vrienden, alfabetisch gesorteerd op naam.
+Druk de naam af van al je vrienden die 30 jaar of ouder zijn.
+Verhoog alle leeftijden in het woordenboek met 1.
+Verwijder alle vrienden waarvan de naam begint met de letter ‘B’
+"""
+"""
+------------- oefening 4-------------
 
 Je krijgt hieronder een Dictonary met daarin woorden nederlands en de franse vertaling.
 
